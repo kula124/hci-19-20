@@ -4,7 +4,7 @@
   },
   "extends": [
     "standard",
-    "standard-react"
+    "plugin:react/recommended"
   ],
   "globals": {
     "__API_URL__": true,
