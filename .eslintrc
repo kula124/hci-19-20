@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "globals": {
+    "__API_URL__": true,
+    "__WEB_URL__": true,
+    "__S3_URL__": true,
+    "google": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "curly": [2, "all"],
+    "max-len": ["error", 120],
+    "newline-after-var": [2, "always"],
+    "newline-before-return": "error",
+    "no-console": 1,
+    "object-curly-spacing": ["error", "always"],
+    "padding-line-between-statements": [ "error", {
+      "blankLine": "always",
+      "prev": "*",
+      "next": "if"
+    }, {
+      "blankLine": "any",
+      "prev": "block",
+      "next": "if"
+    }, {
+      "blankLine": "always",
+      "prev": "if",
+      "next": "*"
+    }, {
+      "blankLine": "any",
+      "prev": "if",
+      "next": "block"
+    }, {
+      "blankLine": "always",
+      "prev": "export",
+      "next": "*"
+    }],
+    "react/jsx-max-props-per-line": 1,
+    "react/jsx-sort-props": 1,
+    "react/no-did-update-set-state": 0,
+    "sort-keys": "warn",
+    "sort-vars": "warn"
+  }
+}
