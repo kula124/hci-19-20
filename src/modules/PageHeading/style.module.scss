@@ -1,0 +1,12 @@
+.container {
+  width: fit-content;
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  text-align: center;
+  background: black;
+
+  h1 {
+    color: aliceblue;
+  } 
+}
