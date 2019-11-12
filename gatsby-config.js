@@ -15,6 +15,20 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-react-css-modules`,
+      options: {
+        // *.css files are included by default.
+        //* This will support scss styes *//
+        filetypes: {
+          ".scss": { syntax: `postcss-scss` },
+        },
+   
+        // Exclude global styles from the plugin using a RegExp:
+        exclude: `\/global\/`,
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
