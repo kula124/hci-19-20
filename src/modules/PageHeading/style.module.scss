@@ -1,12 +1,26 @@
-.container {
-  width: fit-content;
+.main-container {
+  width: 100%;
+  height: 850px;
+  background: url(../../images/home.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   display: flex;
+  align-items: center;
   flex-flow: column;
   margin: 0 auto;
   text-align: center;
-  background: black;
+  align-items: center;
+  justify-content: center;
+
+  .img {
+    width: 400px;
+    height: 50px;
+  }
 
   h1 {
+    font-family: 'Questrial', 'sans-serif';
     color: aliceblue;
-  } 
+  }
 }
