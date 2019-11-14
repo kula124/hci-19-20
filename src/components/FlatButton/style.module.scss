@@ -1,0 +1,15 @@
+.default {
+    border: solid 1.5px white;
+    border-radius: 13px;
+    padding: 12px;
+    font-weight: bolder;
+    box-shadow: gray 3px;
+    color: white;
+    background: transparent;
+    transition: background .2s ease-in;
+
+    &:hover {
+        background: #82bee0;
+        box-shadow: gray 6px;
+    }
+}
