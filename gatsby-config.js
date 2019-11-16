@@ -12,16 +12,15 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-react-css-modules`,
+      exclude: `\/global\/`, //eslint-disable-line
       options: {
         // *.css files are included by default.
         //* This will support scss styes *//
         filetypes: {
-          ".scss": { syntax: `postcss-scss` },
+          '.scss': { syntax: `postcss-scss` }
         },
-   
+        resolve: `gatsby-plugin-react-css-modules`
         // Exclude global styles from the plugin using a RegExp:
-        exclude: `\/global\/`,
       }
     },
     {
