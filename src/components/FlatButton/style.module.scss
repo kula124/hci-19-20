@@ -1,15 +1,18 @@
 .default {
     border: solid 1.5px white;
-    border-radius: 13px;
-    padding: 12px;
+    // border-radius: 13px;
+    padding: 20px 45px;
     font-weight: bolder;
-    box-shadow: gray 3px;
+    font-size: 25px;
+    // box-shadow: 0px 0px 30px 1px white;
     color: white;
     background: transparent;
     transition: background .2s ease-in;
+    // transition: box-shadow .2s ease-in;
+    
 
     &:hover {
         background: #82bee0;
-        box-shadow: gray 6px;
+       // box-shadow: 0px 0px 6px 6px white;
     }
 }
