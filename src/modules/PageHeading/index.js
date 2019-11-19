@@ -1,4 +1,5 @@
 import React from 'react'
+import MaterialIcon from '@material/react-material-icon'
 
 import FlatButton from '../../components/FlatButton'
 import Img from 'gatsby-image'
@@ -27,6 +28,7 @@ const PageHeading = () => {
       <h1>Software development firm</h1>
       <FlatButton>
         <span>Take a peak</span>
+        <MaterialIcon icon='arrow_forward' />
       </FlatButton>
     </div>)
 }
