@@ -4,11 +4,24 @@
 .main-container {
   width: 100%;
   height: 100vh;
-  background: url(../../images/home.png) no-repeat center center fixed; 
+  // background: url(../../images/home.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: linear-gradient(-45deg, #403dff, #715eff, #b000cf, #006878);
+	background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   display: flex;
   align-items: center;
   flex-flow: column;
