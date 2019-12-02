@@ -1,7 +1,7 @@
 import React from 'react'
 import MaterialIcon from '@material/react-material-icon'
-import Typewriter from 'typewriter-effect'
 
+import LazyTypewriter from '../../components/LazyTypewriter'
 import FlatButton from '../../components/FlatButton'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -29,13 +29,8 @@ const PageHeading = () => {
         <Img fixed={imgData.codejarLogo.childImageSharp.fixed} />
         <figcaption>
           <span styleName='code'>&lt;</span>
-          <Typewriter
-            options={{
-              autoStart: true,
-              delay: 500,
-              loop: false,
-              strings: 'Codejar'
-            }}/>
+          <LazyTypewriter string={'Codejar '}
+            tries={3} />
           <span styleName='code'>/&gt;</span>
         </figcaption>
       </figure>
