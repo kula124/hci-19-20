@@ -1,5 +1,6 @@
 import React from 'react'
 import MaterialIcon from '@material/react-material-icon'
+import Typewriter from 'typewriter-effect'
 
 import FlatButton from '../../components/FlatButton'
 import Img from 'gatsby-image'
@@ -11,10 +12,10 @@ const PageHeading = () => {
   // Loading image
   const imgData = useStaticQuery(graphql`
     query {
-      codejarLogo: file(relativePath: { eq: "codejar.png" }) {
+      codejarLogo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fixed(width: 400) {
-            ...GatsbyImageSharpFixed
+          fixed(width: 60, height: 60, quality:100) {
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
@@ -24,7 +25,20 @@ const PageHeading = () => {
   return (
     <div styleName='main-container'>
       <h1>Welcome to </h1>
-      <Img fixed={imgData.codejarLogo.childImageSharp.fixed} />
+      <figure>
+        <Img fixed={imgData.codejarLogo.childImageSharp.fixed} />
+        <figcaption>
+          <span styleName='code'>&lt;</span>
+          <Typewriter
+            options={{
+              autoStart: true,
+              delay: 500,
+              loop: false,
+              strings: 'Codejar'
+            }}/>
+          <span styleName='code'>/&gt;</span>
+        </figcaption>
+      </figure>
       <h1>Software development firm</h1>
       <FlatButton>
         <span>Take a peak</span>
