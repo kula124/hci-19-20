@@ -3,7 +3,7 @@ import React from 'react'
 import chunk from 'lodash.chunk'
 import PropTypes from 'prop-types'
 
-import { GenerateRandomString } from '../../helper'
+import { GenerateRandomString } from 'helper'
 
 const LazyTypewritter = ({ string, tries, ...rest }) => {
   const substringLen = parseInt(string.length / tries)
