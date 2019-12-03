@@ -1,8 +1,8 @@
 import React from 'react'
 import MaterialIcon from '@material/react-material-icon'
 
-import LazyTypewriter from '../../components/LazyTypewriter'
-import FlatButton from '../../components/FlatButton'
+import LazyTypewriter from 'components/LazyTypewriter'
+import FlatButton from 'components/FlatButton'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 

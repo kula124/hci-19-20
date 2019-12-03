@@ -1,5 +1,5 @@
 import React from 'react'
-import PageHeading from '../modules/PageHeading'
+import PageHeading from 'modules/PageHeading'
 
 const IndexPage = () => (
   <>
