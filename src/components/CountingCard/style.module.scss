@@ -1,0 +1,25 @@
+.main-container {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 300px;
+
+  .image-container {
+    width: fit-content;
+    height: auto;
+    border: 1px solid white;
+    background: purple;
+    border-radius:50%;
+    padding: 60px;
+  }
+
+  span {
+    font-size: 53px;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 22px;
+  }
+}
