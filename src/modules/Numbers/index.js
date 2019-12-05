@@ -1,5 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
+import get from 'lodash.get'
 import { useStaticQuery, graphql } from 'gatsby'
 
 // import loc from 'resources/crn.svg'
@@ -7,44 +8,56 @@ import CountingCard from 'components/CountingCard'
 
 import './style.module.scss'
 
+const find = (arr, string) =>
+  get(arr.find(e =>
+    get(e, `node.childImageSharp.fixed.originalName`) === string),
+  'node.childImageSharp')
+
 const Numbers = (props) => {
-  const loc = useStaticQuery(graphql`
-query {
-  codejarLogo: file(relativePath: { eq: "admin.inline.png" }) {
-    childImageSharp {
-      fixed(width: 100, height: 100, quality:100, fit:CONTAIN) {
-        ...GatsbyImageSharpFixed
+  const images = useStaticQuery(graphql`
+  query images {
+    allFile(filter: {name: {regex: "/_num/"}}) {
+      edges {
+        node {
+          childImageSharp {
+            fixed(width: 100, height: 100) {
+              src
+              originalName
+              srcSet
+              width
+              height
+              tracedSVG
+            }
+          }
+        }
       }
     }
   }
-}
-`)
+`).allFile.edges
 
   const countList = [
     {
       count: 280686,
-      image: loc,
+      image: find(images, 'code_num.png'),
       text: 'lines of sleek clean code written by our developers and still counting'
     },
     {
       count: 40824,
-      image: loc,
+      image: find(images, 'git_num.png'),
       text: `commits proves we are committed to write functional and 
         efficient production code reviewed by our QA and client personally`
     },
     {
       count: 6,
-      image: loc,
+      image: find(images, 'experience_num.png'),
       text: 'major projects that made it to production and are used by millions of users around the world'
     },
     {
       count: 5,
-      image: loc,
+      image: find(images, 'client_num.png'),
       text: 'happy clients. Are you ready to join them?'
     }
   ]
-
-  console.log(loc)
 
   return (<section styleName='main-container'>
     <h1>

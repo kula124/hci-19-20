@@ -10,7 +10,7 @@ const CountingCard = ({ image, text, count }) => {
   return (<li>
     <figure styleName='main-container'>
       <div styleName='image-container'>
-        <Img fixed={image.codejarLogo.childImageSharp.fixed} />
+        <Img fixed={image.fixed} />
       </div>
       <Count
         duration={4}
