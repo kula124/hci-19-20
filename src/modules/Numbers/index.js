@@ -27,19 +27,20 @@ query {
       text: 'lines of sleek clean code written by our developers and still counting'
     },
     {
-      count: 280686,
+      count: 40824,
       image: loc,
-      text: '280686 lines of sleek clean code written by our developers and still counting'
+      text: `commits proves we are committed to write functional and 
+        efficient production code reviewed by our QA and client personally`
     },
     {
-      count: 280686,
+      count: 6,
       image: loc,
-      text: '280686 lines of sleek clean code written by our developers and still counting'
+      text: 'major projects that made it to production and are used by millions of users around the world'
     },
     {
-      count: 280686,
+      count: 5,
       image: loc,
-      text: '280686 lines of sleek clean code written by our developers and still counting'
+      text: 'happy clients. Are you ready to join them?'
     }
   ]
 
