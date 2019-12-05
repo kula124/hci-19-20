@@ -1,6 +1,35 @@
+@import '../../global.scss';
+
 .main-container {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #715eff;
+  position: relative;
+  display: block;
+  background-color: white;
+
+  h1 {
+    @extend .main-title;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 45px;
+    display: block;
+    background-image: linear-gradient(to left, #b000cf, #715eff, #403dff, #006878);
+    background-clip: text;
+    color: transparent;
+  }
+
+  p {
+    @extend .subtitle-paragraph;
+  }
+
+  ul {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: auto 0;
+  }
 }
