@@ -2,10 +2,11 @@ import React from 'react'
 
 import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
+import Navigation from 'modules/Navigation'
 
 const IndexPage = () => (
   <>
-    <PageHeading />
+    <PageHeading Navigation={Navigation} />
     <NumberSection />
   </>
 )
