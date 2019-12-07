@@ -9,6 +9,14 @@ module.exports = {
       },
       resolve: `gatsby-source-filesystem`
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/ // Should load inline svg if 'inline' is in filename
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
