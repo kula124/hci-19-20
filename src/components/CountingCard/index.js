@@ -6,11 +6,11 @@ import Count from 'react-countup'
 
 import './style.module.scss'
 
-const CountingCard = ({ image, text, count }) => {
-  return (<li>
+const CountingCard = ({ image, text, count }) => (
+  <li>
     <figure styleName='main-container'>
       <div styleName='image-container'>
-        <Img fixed={image.fixed} />
+        <Img fixed={image.node.childImageSharp.fixed} />
       </div>
       <Count
         duration={4}
@@ -20,12 +20,12 @@ const CountingCard = ({ image, text, count }) => {
         {text}
       </figcaption>
     </figure>
-  </li>)
-}
+  </li>
+)
 
 CountingCard.propTypes = {
   count: PropTypes.number,
-  image: PropTypes.func.isRequired,
+  image: PropTypes.object.isRequired,
   text: PropTypes.string
 
 }
