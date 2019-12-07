@@ -1,0 +1,61 @@
+@import "../../styles/colors.scss";
+
+$hover-color: rgba(255,255,255,0.8);
+
+.main-container {
+  background: transparent;
+  // border: black 1px solid;
+  height: 60px;
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 0 50px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  span {
+    color: $logo-color;
+    font-size: 30px;
+  }
+
+  p {
+    padding-left: 10px;
+    color: $code-bracket-color;
+    font-size: 30px;
+  }
+}
+
+nav {
+  height: 100%;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+
+  li {
+    padding: 14.5px 20px;
+    text-emphasis: bolder;
+    color: white;
+    font-size: 30px;
+    transition: background .2s ease-in;
+    transition: color .1s ease-in;
+
+    &:hover {
+      background: $hover-color;
+      color: $gradient-color-1;
+    }
+  }
+}
