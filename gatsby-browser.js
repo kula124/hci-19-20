@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-import './src/browser.scss'
-import './src/global.scss'
+import './src/styles/browser.scss'
+import './src/styles/global.scss'

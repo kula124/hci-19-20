@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-@import '../node_modules/@material/react-material-icon/dist/material-icon.css';
+@import '../../node_modules/@material/react-material-icon/dist/material-icon.css';
 
 button {
   outline: none;
@@ -14,7 +14,7 @@ body {
   font-family: "Questrial", "sans-serif";
 }
 
-ul {
+ul, nav {
   list-style: none;
   margin: 0;
 }
