@@ -4,8 +4,10 @@
   margin: 0;
   padding: 0;
   height: 100vh;
+  padding: 0 12%;
   position: relative;
-  display: block;
+  display: flex;
+  flex-flow: column;
   background-color: white;
 
   h1 {
@@ -24,12 +26,11 @@
   }
 
   ul {
-    width: 100%;
-    height: 500px;
-    position: relative;
+    height: auto;
     display: flex;
     justify-content: space-around;
     padding: 0;
     margin: auto 0;
+    margin-bottom: 5%;
   }
 }
