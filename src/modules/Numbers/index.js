@@ -1,63 +1,37 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-import get from 'lodash.get'
 import { useStaticQuery, graphql } from 'gatsby'
+import get from 'lodash.get'
+import keyBy from 'lodash.keyby'
 
-// import loc from 'resources/crn.svg'
+import data from './data'
 import CountingCard from 'components/CountingCard'
 
 import './style.module.scss'
 
-const find = (arr, string) =>
-  get(arr.find(e =>
-    get(e, `node.childImageSharp.fixed.originalName`) === string),
-  'node.childImageSharp')
-
 const Numbers = (props) => {
-  const images = useStaticQuery(graphql`
-  query images {
-    allFile(filter: {name: {regex: "/_num/"}}) {
-      edges {
-        node {
-          childImageSharp {
-            fixed(width: 100, height: 100) {
-              src
-              originalName
-              srcSet
-              width
-              height
-              tracedSVG
+  const images =
+    keyBy(
+      useStaticQuery(graphql`
+        query images {
+          allFile(filter: {name: {regex: "/_num/"}}) {
+            edges {
+              node {
+                childImageSharp {
+                  fixed(width: 100, height: 100) {
+                    src
+                    originalName
+                    srcSet
+                    width
+                    height
+                    tracedSVG
+                  }
+                }
+              }
             }
           }
         }
-      }
-    }
-  }
-`).allFile.edges
-
-  const countList = [
-    {
-      count: 280686,
-      image: find(images, 'code_num.png'),
-      text: 'lines of sleek clean code written by our developers and still counting'
-    },
-    {
-      count: 40824,
-      image: find(images, 'git_num.png'),
-      text: `commits proves we are committed to write functional and 
-        efficient production code reviewed by our QA and client personally`
-    },
-    {
-      count: 6,
-      image: find(images, 'experience_num.png'),
-      text: 'major projects that made it to production and are used by millions of users around the world'
-    },
-    {
-      count: 5,
-      image: find(images, 'client_num.png'),
-      text: 'happy clients. Are you ready to join them?'
-    }
-  ]
+      `).allFile.edges,
+    e => get(e, 'node.childImageSharp.fixed.originalName')) // eslint-disable-line
 
   return (<section styleName='main-container'>
     <h1>
@@ -69,15 +43,12 @@ const Numbers = (props) => {
       in tackling any challenge you may throw at us!
     </p>
     <ul>
-      {countList.map(el => <CountingCard key={el.count + countList.indexOf(el)}
-        {...el} />)}
+      {data.map(({ image, ...rest }, index) => <CountingCard image={images[image]}
+        key={index}
+        {...rest} />)}
     </ul>
   </section>)
 }
-
-// LOC 280686
-// Commits 40824
-Numbers.propTypes = {}
 
 export default Numbers
 
