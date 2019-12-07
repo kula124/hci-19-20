@@ -1,18 +1,14 @@
 // @import "./styes/typewritter.scss";
 
-button {
-    outline: none;
-}
-
 .main-title {
-    font-family: 'Questrial', 'sans-serif';
-    color: aliceblue;
+  color: aliceblue;
+  font-size: 55px;
+  text-align: center;
 }
 
-figure {
-    margin: 0;
+.subtitle-paragraph {
+    color: #616161;
+    font-size: 33px;
+    text-align: center;
 }
 
-img {
-    margin: 0;
-}

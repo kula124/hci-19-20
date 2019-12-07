@@ -1,2 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 @import '../node_modules/@material/react-material-icon/dist/material-icon.css';
+
+button {
+  outline: none;
+}
+
+figure {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Questrial", "sans-serif";
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+img {
+  margin: 0;
+}
