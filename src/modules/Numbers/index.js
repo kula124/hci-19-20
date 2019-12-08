@@ -9,7 +9,8 @@ import CountingCard from 'components/CountingCard'
 
 import './style.module.scss'
 
-const Numbers = (props) => {
+// eslint-disable-next-line react/display-name
+const Numbers = React.forwardRef((props, ref) => {
   const images =
     keyBy(
       useStaticQuery(graphql`
@@ -34,7 +35,8 @@ const Numbers = (props) => {
       `).allFile.edges,
     e => get(e, 'node.childImageSharp.fixed.originalName')) // eslint-disable-line
 
-  return (<section styleName='main-container'>
+  return (<section ref={ref}
+    styleName='main-container'>
     <h1>
       May the numbers be ever in your favour!
     </h1>
@@ -49,7 +51,7 @@ const Numbers = (props) => {
         {...rest} />)}
     </List>
   </section>)
-}
+})
 
 export default Numbers
 

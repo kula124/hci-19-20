@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+import { ScrollToRef } from 'helper'
 import { links } from './navigationData'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
@@ -38,7 +39,8 @@ const Navigation = ({ refs }) => {
         <p>/&gt;</p>
       </div>
       <nav>
-        {links.map(el => <li key={el.id}>
+        {links.map(el => <li key={el.id}
+          onClick={() => ScrollToRef(refs[el.id])}>
           {el.label}
         </li>)}
       </nav>
