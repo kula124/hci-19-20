@@ -1,5 +1,6 @@
 .main-container {
   margin: 0;
+  opacity: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -22,4 +23,9 @@
     text-align: center;
     font-size: 22px;
   }
+}
+
+.main-container-visible {
+  @extend .main-container;
+  opacity: 1;
 }
