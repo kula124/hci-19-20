@@ -6,16 +6,17 @@ import Count from 'react-countup'
 
 import './style.module.scss'
 
-const CountingCard = ({ image, text, count }) => (
+const CountingCard = ({ image, text, count, visible }) => (
   <li>
-    <figure styleName='main-container'>
+    <figure className={visible ? 'animated flipInY' : ''}
+      styleName={visible ? 'main-container-visible' : 'main-container'}>
       <div styleName='image-container'>
         <Img fixed={image.node.childImageSharp.fixed} />
       </div>
-      <Count
+      {visible && <Count
         duration={4}
         end={count}
-        start={0} />
+        start={0} /> }
       <figcaption>
         {text}
       </figcaption>
@@ -26,7 +27,8 @@ const CountingCard = ({ image, text, count }) => (
 CountingCard.propTypes = {
   count: PropTypes.number,
   image: PropTypes.object.isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
+  visible: PropTypes.bool
 
 }
 
