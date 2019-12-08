@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 
+import { ScrollToRef } from 'helper'
 import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
@@ -12,10 +13,11 @@ const IndexPage = () => {
   }
 
   return (<>
-    <PageHeading Navigation>
+    <PageHeading buttonOnClick={() => ScrollToRef(refs.tech)}
+      Navigation>
       <Navigation refs={refs} />
     </PageHeading>
-    <NumberSection />
+    <NumberSection ref={refs.tech} />
   </>)
 }
 

@@ -8,7 +8,7 @@ import Logo from 'components/Images/Logo'
 
 import './style.module.scss'
 
-const PageHeading = ({ Navigation, children }) => (
+const PageHeading = ({ Navigation, buttonOnClick, children }) => (
   <div styleName='main-container'>
     <h1>Welcome to </h1>
     <figure>
@@ -21,7 +21,7 @@ const PageHeading = ({ Navigation, children }) => (
       </figcaption>
     </figure>
     <h1>Software development firm</h1>
-    <FlatButton>
+    <FlatButton onClick={buttonOnClick}>
       <span>Take a peak</span>
       <MaterialIcon icon='arrow_forward' />
     </FlatButton>
@@ -31,6 +31,7 @@ const PageHeading = ({ Navigation, children }) => (
 
 PageHeading.propTypes = {
   Navigation: PropTypes.bool,
+  buttonOnClick: PropTypes.func,
   children: PropTypes.func
 }
 
