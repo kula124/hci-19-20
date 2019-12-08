@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import get from 'lodash.get'
 import keyBy from 'lodash.keyby'
 
+import List from 'components/DelayedList'
 import data from './data'
 import CountingCard from 'components/CountingCard'
 
@@ -42,11 +43,11 @@ const Numbers = (props) => {
       challenging projects, sleek and clean code and happiness of our clients gives us confidence
       in tackling any challenge you may throw at us!
     </p>
-    <ul>
+    <List>
       {data.map(({ image, ...rest }, index) => <CountingCard image={images[image]}
         key={index}
         {...rest} />)}
-    </ul>
+    </List>
   </section>)
 }
 

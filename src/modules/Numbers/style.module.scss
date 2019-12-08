@@ -24,13 +24,4 @@
   p {
     @extend .subtitle-paragraph;
   }
-
-  ul {
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: auto 0;
-    margin-bottom: 5%;
-  }
 }
