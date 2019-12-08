@@ -7,6 +7,7 @@ export default function HTML (props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"/>
         <meta charSet="utf-8" />

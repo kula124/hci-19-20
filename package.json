@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material/react-material-icon": "^0.15.0",
+    "animate.css": "^3.7.2",
     "gatsby": "^2.16.1",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-manifest": "^2.2.23",
