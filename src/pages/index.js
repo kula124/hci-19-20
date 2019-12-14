@@ -4,6 +4,7 @@ import { ScrollToRef } from 'helper'
 import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
+import { StoreProvider } from 'store'
 
 const IndexPage = () => {
   const refs = {
@@ -12,13 +13,15 @@ const IndexPage = () => {
     tech: useRef()
   }
 
-  return (<>
-    <PageHeading buttonOnClick={() => ScrollToRef(refs.tech)}
-      Navigation>
-      <Navigation refs={refs} />
-    </PageHeading>
-    <NumberSection ref={refs.tech} />
-  </>)
+  return (
+    <StoreProvider>
+      <PageHeading buttonOnClick={() => ScrollToRef(refs.tech)}
+        Navigation>
+        <Navigation refs={refs} />
+      </PageHeading>
+      <NumberSection ref={refs.tech} />
+    </StoreProvider>
+  )
 }
 
 export default IndexPage
