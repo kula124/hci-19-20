@@ -42,7 +42,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "gatsby-plugin-react-svg": "^2.1.2",
     "postcss-scss": "^2.0.0",
-    "prettier": "^1.18.2",
     "sass-lint": "^1.12.1"
   },
   "keywords": [
@@ -52,7 +51,6 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
