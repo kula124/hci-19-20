@@ -51,6 +51,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "format:fix": "eslint --fix .",
+    "format:check": "eslint --check .",
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
