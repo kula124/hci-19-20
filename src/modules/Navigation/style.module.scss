@@ -15,6 +15,11 @@ $hover-color: rgba(255,255,255,0.8);
   align-items: center;
 }
 
+.selected {
+  background: $hover-color;
+  color: $gradient-color-1;
+}
+
 .sticky {
   background: $num-bg-color;
   position: fixed;
@@ -61,8 +66,7 @@ nav {
     transition: color .1s ease-in;
 
     &:hover {
-      background: $hover-color;
-      color: $gradient-color-1;
+      @extend .selected;
     }
   }
 }

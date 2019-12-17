@@ -5,12 +5,26 @@ import { links } from './navigationData'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import PropTypes from 'prop-types'
+import { useStore } from 'store'
 
 import './style.module.scss'
+
+const isElementVisible = (element, nav) => {
+  if (nav.length > 1 && element === nav[1]) {
+    return true
+  }
+
+  if (nav.length > 0 && element === nav[0]) {
+    return true
+  }
+
+  return false
+}
 
 const Navigation = ({ refs }) => {
   const [sticky, setSticky] = useState(false)
   const [visible, setVisible] = useState(false)
+  const { store: { navigation } } = useStore()
 
   window.onscroll = () => {
     if (document.documentElement.scrollTop < window.innerHeight + 100) {
@@ -40,7 +54,8 @@ const Navigation = ({ refs }) => {
       </div>
       <nav>
         {links.map(el => <li key={el.id}
-          onClick={() => ScrollToRef(refs[el.id])}>
+          onClick={() => ScrollToRef(refs[el.id])}
+          styleName={isElementVisible(el.id, navigation) ? 'selected' : ''}>
           {el.label}
         </li>)}
       </nav>

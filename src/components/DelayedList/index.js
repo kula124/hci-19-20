@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import VisibilitySenor from 'react-visibility-sensor'
+import VisibilitySensor from 'react-visibility-sensor'
 // import * as bb from 'bluebird'
 
 import './style.module.scss'
@@ -23,7 +23,7 @@ const List = ({ children, onChange, timeout }) => {
     setTimeout(() => setVisibleElements([...visibleElements, newElement]), timeout)
   })
 
-  return <VisibilitySenor onChange={onChange || ((isVisible) => {
+  return <VisibilitySensor onChange={onChange || ((isVisible) => {
     !visible && setVisible(isVisible)
   })}
   partialVisibility>
@@ -37,7 +37,7 @@ const List = ({ children, onChange, timeout }) => {
       })
       )}
     </ul>
-  </VisibilitySenor>
+  </VisibilitySensor>
 }
 
 List.propTypes = {
