@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans&display=swap');
 @import '../../node_modules/@material/react-material-icon/dist/material-icon.css';
 
 html {
@@ -15,7 +15,7 @@ figure {
 
 body {
   margin: 0;
-  font-family: "Questrial", "sans-serif";
+  font-family: "Fira Sans", "sans-serif";
 }
 
 ul, nav {
@@ -25,4 +25,8 @@ ul, nav {
 
 img {
   margin: 0;
+}
+
+.Typewriter__wrapper {
+  font-family: "Fira Mono", "sans-serif";
 }
