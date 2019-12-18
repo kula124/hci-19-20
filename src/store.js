@@ -49,7 +49,7 @@ const mainReducer = (state, action) => {
 export const StoreProvider = (props) => {
   const [store, dispatch] = useReducer(mainReducer, initialStore)
 
-  const storeData = { store, dispatch }
+  const storeData = { dispatch, store }
 
   return <StoreContext.Provider value={storeData}
     {...props} />

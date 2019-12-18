@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import { ScrollToRef } from 'helper'
-import { links } from './navigationData'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import PropTypes from 'prop-types'
@@ -21,7 +20,7 @@ const isElementVisible = (element, nav) => {
   return false
 }
 
-const Navigation = ({ refs }) => {
+const Navigation = ({ refs, links }) => {
   const [sticky, setSticky] = useState(false)
   const [visible, setVisible] = useState(false)
   const { store: { navigation } } = useStore()
@@ -64,6 +63,7 @@ const Navigation = ({ refs }) => {
 }
 
 Navigation.propTypes = {
+  links: PropTypes.array.isRequired,
   refs: PropTypes.object
 }
 

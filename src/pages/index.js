@@ -5,6 +5,7 @@ import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
 import { StoreProvider } from 'store'
+import { links } from 'modules/Navigation/navigationData'
 
 const IndexPage = () => {
   const refs = {
@@ -17,7 +18,9 @@ const IndexPage = () => {
     <StoreProvider>
       <PageHeading buttonOnClick={() => ScrollToRef(refs.tech)}
         Navigation>
-        <Navigation refs={refs} />
+        <Navigation
+          links={links}
+          refs={refs} />
       </PageHeading>
       <NumberSection ref={refs.tech} />
     </StoreProvider>
