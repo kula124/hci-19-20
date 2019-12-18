@@ -2,16 +2,12 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import get from 'lodash.get'
 import keyBy from 'lodash.keyby'
-import VisibilitySensor from 'hooks/useIsVisible'
 
-import List from 'components/DelayedList'
-import data from './data'
-import CountingCard from 'components/CountingCard'
-
-import './style.module.scss'
+import BigHeroLayout from 'components/BigHeroLayout'
+import { Numbers } from 'constants/data'
 
 // eslint-disable-next-line react/display-name
-const Numbers = React.forwardRef((props, ref) => {
+const NumbersModule = React.forwardRef((props, ref) => {
   const images =
     keyBy(
       useStaticQuery(graphql`
@@ -37,28 +33,14 @@ const Numbers = React.forwardRef((props, ref) => {
     e => get(e, 'node.childImageSharp.fixed.originalName')) // eslint-disable-line
 
   return (
-    <VisibilitySensor id='tech'>
-      <section ref={ref}
-        styleName='main-container'>
-        <h1>
-          May the numbers be ever in your favour!
-        </h1>
-        <p>
-          Luckily, they are in ours. Let the numbers speak! Experience in number of
-          challenging projects, sleek and clean code and happiness of our clients gives us confidence
-          in tackling any challenge you may throw at us!
-        </p>
-        <List>
-          {data.map(({ image, ...rest }, index) => <CountingCard image={images[image]}
-            key={index}
-            {...rest} />)}
-        </List>
-      </section>
-    </VisibilitySensor>
+    <BigHeroLayout id={'tech'}
+      images={images}
+      styleProp={'main-numbers'}
+      {...Numbers}/>
   )
 })
 
-export default Numbers
+export default NumbersModule
 
 // eslint-disable-next-line max-len
 // <div>Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
