@@ -15,7 +15,7 @@ const PageHeading = ({ Navigation, buttonOnClick, children }) => (
       <Logo />
       <figcaption>
         <span styleName='code'>&lt;</span>
-        <LazyTypewriter string={'Codejar '}
+        <LazyTypewriter string={'Codejar'}
           tries={3} />
         <span styleName='code'>/&gt;</span>
       </figcaption>

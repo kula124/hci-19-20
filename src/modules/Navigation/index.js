@@ -47,7 +47,8 @@ const Navigation = ({ refs, links }) => {
           options={{
             autoStart: true,
             delay: 400,
-            strings: 'CodeJar'
+            strings: 'Codejar',
+            wrapperClassName: 'typewriter'
           }} />}
         <p>/&gt;</p>
       </div>
