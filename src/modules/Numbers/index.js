@@ -35,6 +35,7 @@ const NumbersModule = React.forwardRef((props, ref) => {
   return (
     <BigHeroLayout id={'tech'}
       images={images}
+      ref={ref}
       styleProp={'main-numbers'}
       {...Numbers}/>
   )
