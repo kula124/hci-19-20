@@ -5,7 +5,7 @@ import VisibilitySensor from 'react-visibility-sensor'
 
 import './style.module.scss'
 
-const List = ({ children, onChange, timeout }) => {
+const List = ({ children, listStyleContainer, timeout }) => {
   const [visible, setVisible] = useState(false)
   const [visibleElements, setVisibleElements] = useState([])
 
@@ -23,11 +23,11 @@ const List = ({ children, onChange, timeout }) => {
     setTimeout(() => setVisibleElements([...visibleElements, newElement]), timeout)
   })
 
-  return <VisibilitySensor onChange={onChange || ((isVisible) => {
+  return <VisibilitySensor onChange={ ((isVisible) => {
     !visible && setVisible(isVisible)
   })}
   partialVisibility>
-    <ul styleName='main-container'>
+    <ul styleName={listStyleContainer}>
       {children.map(e => ({
         ...e,
         props: {
@@ -42,7 +42,7 @@ const List = ({ children, onChange, timeout }) => {
 
 List.propTypes = {
   children: PropTypes.array.isRequired,
-  onChange: PropTypes.func,
+  listStyleContainer: PropTypes.string.isRequired,
   timeout: PropTypes.number
 }
 

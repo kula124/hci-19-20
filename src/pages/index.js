@@ -5,6 +5,7 @@ import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
 import { StoreProvider } from 'store'
+import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
 
 const IndexPage = () => {
@@ -23,6 +24,7 @@ const IndexPage = () => {
           refs={refs} />
       </PageHeading>
       <NumberSection ref={refs.tech} />
+      <CrossPlatformSection />
     </StoreProvider>
   )
 }

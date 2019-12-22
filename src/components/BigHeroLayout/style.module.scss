@@ -1,14 +1,40 @@
 @import '../../styles/global.scss';
+// @import '../../styles/colors.scss';
 
 .main-numbers {
   margin: 0;
   padding: 0;
   height: 100vh;
-  padding: 0 12%;
+  padding: 0 12vw;
   position: relative;
   display: flex;
   flex-flow: column;
   background-color: white;
+
+  h1 {
+    @extend .main-title;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 45px;
+    display: block;
+    background-image: linear-gradient(to left, #b000cf, #715eff, #403dff, #006878);
+    background-clip: text;
+    color: transparent;
+  }
+
+  p {
+    @extend .subtitle-paragraph;
+  }
+}
+
+.main-cross {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  padding: 0 9vw;
+  position: relative;
+  display: flex;
+  flex-flow: column;
 
   h1 {
     @extend .main-title;
