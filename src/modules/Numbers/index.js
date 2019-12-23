@@ -33,8 +33,7 @@ const NumbersModule = React.forwardRef((props, ref) => {
     e => get(e, 'node.childImageSharp.fixed.originalName')) // eslint-disable-line
 
   return (
-    <BigHeroLayout id={'tech'}
-      images={images}
+    <BigHeroLayout images={images}
       ref={ref}
       styleProp={'main-numbers'}
       {...Numbers}/>

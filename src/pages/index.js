@@ -7,6 +7,7 @@ import Navigation from 'modules/Navigation'
 import { StoreProvider } from 'store'
 import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
+import VisibilitySensor from 'hooks/useIsVisible'
 
 const IndexPage = () => {
   const refs = {
@@ -23,8 +24,12 @@ const IndexPage = () => {
           links={links}
           refs={refs} />
       </PageHeading>
-      <NumberSection ref={refs.tech} />
-      <CrossPlatformSection />
+      <VisibilitySensor id={'tech'}>
+        <div ref={refs.tech}>
+          <NumberSection />
+          <CrossPlatformSection />
+        </div>
+      </VisibilitySensor>
     </StoreProvider>
   )
 }

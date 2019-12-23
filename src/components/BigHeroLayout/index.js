@@ -9,9 +9,9 @@ import s from './style.module.scss'
 
 // eslint-disable-next-line react/display-name
 const Layout = React.forwardRef(
-  ({ heading, paragraph, id, images, listData, styleProp, listStyleContainer, ...rest }, ref) => {
+  ({ heading, paragraph, images, listData, styleProp, listStyleContainer, visibilityProps, ...rest }, ref) => {
     return (
-      <VisibilitySensor id={id}>
+      <VisibilitySensor {...visibilityProps}>
         <section ref={ref}
           styleName={styleProp}>
           <h1>{heading}</h1>
@@ -29,12 +29,12 @@ const Layout = React.forwardRef(
 
 Layout.propTypes = {
   heading: PropTypes.string,
-  id: PropTypes.string,
   images: PropTypes.array.isRequired,
   listData: PropTypes.array.isRequired,
   listStyleContainer: PropTypes.string.isRequired,
   paragraph: PropTypes.string,
-  styleProp: PropTypes.string
+  styleProp: PropTypes.string,
+  visibilityProps: PropTypes.object
 }
 
 export default Layout
