@@ -9,15 +9,7 @@ import { useStore } from 'store'
 import './style.module.scss'
 
 const isElementVisible = (element, nav) => {
-  if (nav.length > 1 && element === nav[1]) {
-    return true
-  }
-
-  if (nav.length > 0 && element === nav[0]) {
-    return true
-  }
-
-  return false
+  return nav[1] ? nav[1] === element : nav[0] === element
 }
 
 const Navigation = ({ refs, links }) => {
