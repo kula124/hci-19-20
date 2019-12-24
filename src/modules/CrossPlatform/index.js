@@ -4,15 +4,15 @@ import get from 'lodash.get'
 import keyBy from 'lodash.keyby'
 
 import BigHeroLayout from 'components/BigHeroLayout'
-import { Numbers } from 'constants/data'
+import { Cross } from 'constants/data'
 
 // eslint-disable-next-line react/display-name
-const NumbersModule = React.forwardRef((props, ref) => {
-  const images =
+const CrossPlatformModule = React.forwardRef((props, ref) => {
+  const crossImages =
     keyBy(
       useStaticQuery(graphql`
         query {
-          allFile(filter: {name: {regex: "/_num/"}}) {
+          allFile(filter: {name: {regex: "/_cross/"}}) {
             edges {
               node {
                 childImageSharp {
@@ -33,14 +33,14 @@ const NumbersModule = React.forwardRef((props, ref) => {
     e => get(e, 'node.childImageSharp.fixed.originalName')) // eslint-disable-line
 
   return (
-    <BigHeroLayout images={images}
-      ref={ref}
-      styleProp={'main-numbers'}
-      {...Numbers}/>
+    <BigHeroLayout
+      images={crossImages}
+      styleProp={'main-cross'}
+      {...Cross}/>
   )
 })
 
-export default NumbersModule
+export default CrossPlatformModule
 
 // eslint-disable-next-line max-len
 // <div>Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
