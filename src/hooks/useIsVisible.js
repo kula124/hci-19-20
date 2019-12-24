@@ -22,7 +22,7 @@ const Visible = ({ children, id, ...rest }) => {
 }
 
 Visible.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
   id: PropTypes.string
 }
 
