@@ -3,6 +3,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+div {
+  min-height: 1px;
 }
 
 button {

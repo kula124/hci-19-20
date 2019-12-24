@@ -7,7 +7,6 @@ import { useStore } from 'store'
 import { GetViewportSize } from 'helper'
 
 const Visible = ({ children, id, ...rest }) => {
-  console.log(rest)
   const { dispatch } = useStore()
 
   return (
