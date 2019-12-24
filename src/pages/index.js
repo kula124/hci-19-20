@@ -5,7 +5,10 @@ import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
 import { StoreProvider } from 'store'
+import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
+import VisibilitySensor from 'hooks/useIsVisible'
+import AnimatedSpacer from 'components/AnimatedSpacer'
 
 const IndexPage = () => {
   const refs = {
@@ -22,7 +25,13 @@ const IndexPage = () => {
           links={links}
           refs={refs} />
       </PageHeading>
-      <NumberSection ref={refs.tech} />
+      <VisibilitySensor id={'tech'}>
+        <div ref={refs.tech}>
+          <NumberSection />
+          <AnimatedSpacer />
+          <CrossPlatformSection />
+        </div>
+      </VisibilitySensor>
     </StoreProvider>
   )
 }

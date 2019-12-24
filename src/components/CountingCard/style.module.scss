@@ -1,4 +1,4 @@
-.main-container {
+.numbers-item {
   margin: 0;
   opacity: 0;
   display: flex;
@@ -24,7 +24,34 @@
   }
 }
 
-.main-container-visible {
-  @extend .main-container;
+.numbers-item-visible {
+  @extend .numbers-item;
+  opacity: 1;
+}
+//////////
+//////////
+.cross-item {
+  @extend .numbers-item;
+  max-width: 100%;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+
+  .image-container {
+    @extend .image-container;
+  }
+
+  span {
+    font-size: 48px;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 22px;
+  }
+}
+
+.cross-item-visible {
+  @extend .cross-item;
   opacity: 1;
 }

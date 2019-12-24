@@ -1,4 +1,4 @@
-.main-container {
+.numbers-container {
   height: auto;
   min-height: 1px;
   display: flex;
@@ -6,4 +6,17 @@
   padding: 0;
   margin: auto 0;
   margin-bottom: 5%;
+}
+
+.cross-container {
+  height: auto;
+    width: 60%;
+    margin: 0 auto;
+    min-height: 1px;
+    display: flex;
+    flex-flow: column;
+    align-items: space-around;
+    align-items: flex-start;
+    padding: 0;
+    margin-bottom: 5%;
 }

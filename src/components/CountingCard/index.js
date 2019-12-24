@@ -4,7 +4,8 @@ import Img from 'gatsby-image'
 
 import Count from 'react-countup'
 
-import './style.module.scss'
+// eslint-disable-next-line no-unused-vars
+import s from './style.module.scss'
 
 const and = (v1, v2) => !!v1 && !!v2
 
@@ -12,13 +13,12 @@ const CountingCard = ({
   image,
   text,
   animationListItemClass,
-  defaultStyleName,
-  listItemVisibleClass,
+  listItemClassName,
   count,
   visible }) => (
   <li>
     <figure className={visible ? animationListItemClass : ''}
-      styleName={visible ? listItemVisibleClass : defaultStyleName}>
+      styleName={visible ? `${listItemClassName}-visible` : listItemClassName}>
       <div styleName='image-container'>
         <Img fixed={image.node.childImageSharp.fixed} />
       </div>
@@ -36,9 +36,8 @@ const CountingCard = ({
 CountingCard.propTypes = {
   animationListItemClass: PropTypes.string,
   count: PropTypes.number,
-  defaultStyleName: PropTypes.string,
   image: PropTypes.object.isRequired,
-  listItemVisibleClass: PropTypes.string,
+  listItemClassName: PropTypes.string,
   text: PropTypes.string,
   visible: PropTypes.bool
 
