@@ -4,7 +4,6 @@ import { ScrollToRef } from 'helper'
 import PageHeading from 'modules/PageHeading'
 import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
-import { StoreProvider } from 'store'
 import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
 import VisibilitySensor from 'hooks/useIsVisible'
@@ -18,7 +17,7 @@ const IndexPage = () => {
   }
 
   return (
-    <StoreProvider>
+    <>
       <PageHeading buttonOnClick={() => ScrollToRef(refs.tech)}
         Navigation>
         <Navigation
@@ -32,7 +31,7 @@ const IndexPage = () => {
           <CrossPlatformSection />
         </div>
       </VisibilitySensor>
-    </StoreProvider>
+    </>
   )
 }
 
