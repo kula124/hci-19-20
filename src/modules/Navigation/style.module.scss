@@ -1,8 +1,9 @@
-@import "../../styles/colors.scss";
+@import "../../styles/global.scss";
 
-$hover-color: rgba(255,255,255,0.8);
+// $hover-color: rgba(255,255,255,0.8);
 
 .main-container {
+  @extend .navigation-font-size;
   background: transparent;
   z-index: 2;
   // border: black 1px solid;
@@ -16,8 +17,8 @@ $hover-color: rgba(255,255,255,0.8);
 }
 
 .selected {
-  background: $hover-color;
-  color: $gradient-color-1;
+  // background: $hover-color;
+  color: salmon;
 }
 
 .sticky {
@@ -27,11 +28,16 @@ $hover-color: rgba(255,255,255,0.8);
 }
 
 .logo {
-  height: 100%;
+  width: fit-content;
   display: flex;
   flex-flow: row;
   align-items: center;
   padding: 0 50px;
+
+  div:first-of-type { // image wrapper
+    height: 1.7em;
+    width: 1.7em;
+  }
 
   &:hover {
     cursor: pointer;
@@ -39,13 +45,11 @@ $hover-color: rgba(255,255,255,0.8);
 
   span {
     color: $logo-color;
-    font-size: 30px;
   }
 
   p {
     padding-left: 10px;
     color: $code-bracket-color;
-    font-size: 30px;
   }
 }
 
@@ -59,12 +63,12 @@ nav {
 
   li {
     padding: 14.5px 20px;
+    text-transform: uppercase;
     text-emphasis: bolder;
     color: white;
-    font-size: 30px;
     transition: background .2s ease-in;
     transition: color .1s ease-in;
-
+    cursor: pointer;
     &:hover {
       @extend .selected;
     }
