@@ -35,8 +35,10 @@ const CrossPlatformModule = React.forwardRef((props, ref) => {
   return (
     <BigHeroLayout
       images={crossImages}
+      ref={ref}
       styleProp={'main-cross'}
-      {...Cross}/>
+      {...Cross}
+      {...props}/>
   )
 })
 
