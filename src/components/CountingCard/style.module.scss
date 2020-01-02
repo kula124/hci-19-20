@@ -1,3 +1,6 @@
+$counterFontSize: 38px;
+$captionFontSize: 20px;
+
 .numbers-item {
   margin: 0;
   opacity: 0;
@@ -15,12 +18,12 @@
   }
 
   span {
-    font-size: 48px;
+    font-size: $counterFontSize;
   }
 
   figcaption {
     text-align: center;
-    font-size: 22px;
+    font-size: $captionFontSize;
   }
 }
 
@@ -42,15 +45,15 @@
   }
 
   span {
-    font-size: 48px;
+    font-size: $counterFontSize;
   }
 
   figcaption {
     text-align: center;
-    font-size: 22px;
+    font-size: $captionFontSize;
   }
 }
-
+ 
 .cross-item-visible {
   @extend .cross-item;
   opacity: 1;
