@@ -13,12 +13,13 @@ $captionFontSize: 20px;
     width: fit-content;
     height: auto;
     border: 1px solid white;
-    border-radius:50%;
+    border-radius: 50%;
     padding: 35px;
   }
 
   span {
     font-size: $counterFontSize;
+    margin-bottom: 10px;
   }
 
   figcaption {
@@ -53,7 +54,7 @@ $captionFontSize: 20px;
     font-size: $captionFontSize;
   }
 }
- 
+
 .cross-item-visible {
   @extend .cross-item;
   opacity: 1;
