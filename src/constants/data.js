@@ -1,40 +1,46 @@
 export const Numbers = {
-  heading: 'May the numbers be ever in your favour!',
+  heading: 'May the numbers be ever in your favour',
   listData: [
     {
       animationListItemClass: 'animated flipInY',
       count: 280686,
+      header: 'Hard work',
       image: 'code_num.png',
       listItemClassName: 'numbers-item',
-      text: 'lines of sleek clean code written by our developers and still counting'
+      text: 'Lines of sleek clean code'
     },
     {
       animationListItemClass: 'animated flipInY',
       count: 40824,
+      header: 'Collaboration',
       image: 'git_num.png',
       listItemClassName: 'numbers-item',
-      text: `commits proves we are committed to write functional and 
-      efficient production code reviewed by our QA and client personally`
+      text: `Git commits`
     },
     {
       animationListItemClass: 'animated flipInY',
       count: 6,
+      header: 'Success',
       image: 'experience_num.png',
       listItemClassName: 'numbers-item',
-      text: 'major projects that made it to production and are used by millions of users around the world'
+      text: 'Successful projects'
     },
     {
       animationListItemClass: 'animated flipInY',
       count: 5,
+      header: 'Partners',
       image: 'client_num.png',
       listItemClassName: 'numbers-item',
-      text: 'happy clients. Are you ready to join them?'
+      text: 'Happy clients'
     }
   ],
   listStyleContainer: 'numbers-container',
-  paragraph: `Luckily, they are in ours. Let the numbers speak! Experience in number of
-  challenging projects, sleek and clean code and happiness of our clients gives us confidence
-  in tackling any challenge you may throw at us!`
+  paragraph: `Luckily, they are in ours. We employ 20 experienced developers in Croatia. This means no trail and error,
+    because we know what we are doing and we do it well. 
+    We’ll discuss every pain point together. Analyse user experiences and consider the current technologies, 
+    or you can give us a task and we’ll keep you in the loop about the development. You focus on the business
+    and let us do the tech. 
+    Our numbers speak for us:`
 }
 
 export const Cross = {
