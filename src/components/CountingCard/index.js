@@ -12,34 +12,35 @@ const and = (v1, v2) => !!v1 && !!v2
 const CountingCard = ({
   image,
   header,
+  heading,
   text,
   animationListItemClass,
   listItemClassName,
   count,
   visible }) => (
-  <li>
-    <figure className={visible ? animationListItemClass : ''}
-      styleName={visible ? `${listItemClassName}-visible` : listItemClassName}>
-      {header && <h3>{header}</h3>}
-      <div styleName='image-container'>
-        <Img fixed={image.node.childImageSharp.fixed} />
-      </div>
-      {and(visible, count !== 0) && <Count
-        duration={4}
-        end={count}
-        separator=','
-        start={0} /> }
-      <figcaption>
-        {text}
-      </figcaption>
-    </figure>
-  </li>
+  <figure className={visible ? animationListItemClass : ''}
+    styleName={visible ? `${listItemClassName}-visible` : listItemClassName}>
+    {header && <h3>{header}</h3>}
+    <div styleName='image-container'>
+      <Img fixed={image.node.childImageSharp.fixed} />
+    </div>
+    {and(visible, count !== 0) && <Count
+      duration={4}
+      end={count}
+      separator=','
+      start={0} /> }
+    {heading && <h4>{heading}</h4>}
+    <figcaption>
+      {text}
+    </figcaption>
+  </figure>
 )
 
 CountingCard.propTypes = {
   animationListItemClass: PropTypes.string,
   count: PropTypes.number,
   header: PropTypes.string,
+  heading: PropTypes.string,
   image: PropTypes.object.isRequired,
   listItemClassName: PropTypes.string,
   text: PropTypes.string,
