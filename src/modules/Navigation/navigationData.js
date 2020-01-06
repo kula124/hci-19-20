@@ -21,6 +21,7 @@ export const links = [
   },
   {
     id: 'login',
-    label: 'Login'
+    label: 'Login',
+    to: '/login/'
   }
 ]
