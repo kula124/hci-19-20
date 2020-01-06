@@ -8,3 +8,7 @@ export const GetViewportSize = () => ({
   height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
   width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 })
+
+export const delay = ms => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
