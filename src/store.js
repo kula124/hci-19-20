@@ -24,11 +24,17 @@ const mainReducer = (state, action) => {
     case AUTH.SUCCESS:
       return ({
         ...state,
-        auth: action.data
+        auth: {
+          data: { ...localStorage[action.data.username] },
+          inProgress: false
+        }
       })
     case AUTH.FAILED:
       return ({
         ...state,
+        auth: {
+          inProgress: false
+        },
         error: action.error
       })
     case NAVIGATION.ADD_VISIBLE:
