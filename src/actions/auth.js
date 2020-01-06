@@ -36,7 +36,7 @@ const loginSuccess = data => {
 
 const loginFailed = {
   type: AUTH.FAILED,
-  data: {}
+  error: 'email or password incorrect'
 }
 
 export const login = async (dispatch, data) => {
@@ -49,8 +49,12 @@ export const login = async (dispatch, data) => {
       notAnActualDatabase.find(el => el.username === data.username && el.password === data.password))
 
   if (res) { // found, yay
-    return dispatch(loginSuccess(res))
+    dispatch(loginSuccess(res))
+
+    return true
   }
 
-  return dispatch(loginFailed)
+  dispatch(loginFailed)
+
+  return false
 }
