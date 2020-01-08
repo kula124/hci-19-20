@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { navigateTo } from 'gatsby'
 // import PropTypes from 'prop-types'
 import { errors } from 'constants/errors'
+import { ExecuteOnRef } from 'helper'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import FlatButton from 'components/FlatButton'
@@ -15,6 +16,8 @@ const LoginPage = props => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { store, dispatch } = useStore()
+
+  const buttonRef = React.createRef()
 
   return (
     <div styleName='root'>
@@ -37,9 +40,11 @@ const LoginPage = props => {
         <h2>Employee login:</h2>
         <input disabled={store.auth.inProgress}
           onChange={(e) => setEmail(e.target.value)}
+          onKeyPress={e => e.key.toLowerCase() === 'enter' && ExecuteOnRef(buttonRef, 'click')}
           placeholder='Email'/>
         <input disabled={store.auth.inProgress}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyPress={e => e.key.toLowerCase() === 'enter' && ExecuteOnRef(buttonRef, 'click')}
           placeholder='Password'
           type='password'/>
         <FlatButton disabled={store.auth.inProgress}
@@ -57,6 +62,7 @@ const LoginPage = props => {
 
             cb()
           }}
+          ref={buttonRef}
           styleProp='login'
           type='submit'>
           {
