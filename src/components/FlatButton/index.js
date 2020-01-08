@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './style.module.scss'
+// eslint-disable-next-line no-unused-vars
+import s from './style.module.scss'
 
-const FlatButton = ({ onClick, styleProp, children }) =>
+// eslint-disable-next-line react/display-name
+const FlatButton = React.forwardRef(({ onClick, styleProp, children, ...rest }, ref) =>
   <button onClick={onClick}
-    styleName={styleProp || 'default'}>
+    ref={ref}
+    styleName={styleProp || 'default'}
+    {...rest}>
     {children}
-  </button>
+  </button>)
 
 FlatButton.propTypes = {
   children: PropTypes.array,

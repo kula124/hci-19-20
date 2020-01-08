@@ -1,5 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans&display=swap');
-@import '../../node_modules/@material/react-material-icon/dist/material-icon.css';
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans&display=swap");
+@import "../../node_modules/@material/react-material-icon/dist/material-icon.css";
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  &::focus {
+    outline: none;
+  }
+}
 
 html {
   scroll-behavior: smooth;

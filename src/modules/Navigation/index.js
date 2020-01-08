@@ -5,7 +5,7 @@ import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import PropTypes from 'prop-types'
 import { useStore } from 'store'
-
+import NavigationItem from './NavigationItem'
 import './style.module.scss'
 
 const isElementVisible = (element, nav) => {
@@ -45,11 +45,12 @@ const Navigation = ({ refs, links }) => {
         <p>/&gt;</p>
       </div>
       <nav>
-        {links.map(el => <li key={el.id}
-          onClick={() => ScrollToRef(refs[el.id])}
-          styleName={isElementVisible(el.id, navigation) ? 'selected' : ''}>
-          {el.label}
-        </li>)}
+        {links.map(({ id, label, ...rest }) => <NavigationItem key={id}
+          onClick={() => ScrollToRef(refs[id])}
+          styleName={isElementVisible(id, navigation) ? 'selected' : ''}
+          {...rest}>
+          {label}
+        </NavigationItem>)}
       </nav>
     </div>
   )
