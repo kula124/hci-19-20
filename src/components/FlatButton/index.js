@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 // eslint-disable-next-line no-unused-vars
 import s from './style.module.scss'
 
-const FlatButton = ({ onClick, styleProp, children }) =>
+const FlatButton = ({ onClick, styleProp, children, ...rest }) =>
   <button onClick={onClick}
-    styleName={styleProp || 'default'}>
+    styleName={styleProp || 'default'}
+    {...rest}>
     {children}
   </button>
 

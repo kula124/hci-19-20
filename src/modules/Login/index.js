@@ -31,22 +31,26 @@ const LoginPage = props => {
           <p>/&gt;</p>
         </div>
         <h2>Employee login:</h2>
-        <input onChange={(e) => setEmail(e.target.value)}
+        <input disabled={store.auth.inProgress}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder='Email'/>
-        <input onChange={(e) => setPassword(e.target.value)}
+        <input disabled={store.auth.inProgress}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder='Password'
           type='password'/>
-        <FlatButton onClick={async () => {
-          const data = {
-            password: password,
-            username: email
-          }
+        <FlatButton disabled={store.auth.inProgress}
+          onClick={async () => {
+            const data = {
+              password: password,
+              username: email
+            }
 
-          const cb = (await login(dispatch, data)) ? () => navigateTo('/') : () => {}
+            const cb = (await login(dispatch, data)) ? () => navigateTo('/') : () => {}
 
-          cb()
-        }}
-        styleProp='login'>
+            cb()
+          }}
+          styleProp='login'
+          type='submit'>
           {
             store.auth.inProgress
               ? <Spinner />

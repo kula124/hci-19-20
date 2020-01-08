@@ -23,11 +23,13 @@
 .main-container {
     padding: 40px 50px 10px 30px;
     width: 320px;
-    background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    background: transparent;
+    /*
     border-left: 2px $gradient-color-2 solid;
     border-top: 2px $gradient-color-1 solid;
     border-right: 2px $gradient-color-2 solid;
     border-bottom: 2px $gradient-color-1 solid;
+    */
     height: 450px;
     position: absolute;
     left: 50%;
@@ -35,6 +37,17 @@
     transform: translate(-50%, -50%);
     display: flex;
     flex-flow: column;
+
+    button {
+      margin-top: 20px;
+      align-self: center;
+
+      &:disabled {
+        color: gray;
+        border: gray 1px solid;
+        cursor: wait;
+      }
+    }
 
     input {
         color: white;
@@ -48,6 +61,10 @@
         &::placeholder {
             color: white;
             font-size: 21px;
+        }
+
+        &:disabled {
+          color: gray;
         }
     }
 
