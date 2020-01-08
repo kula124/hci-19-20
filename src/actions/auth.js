@@ -1,6 +1,7 @@
 /* eslint-disable sort-keys */
 import { AUTH } from 'constants/actions'
 import { delay } from 'helper'
+import { errors } from 'constants/errors'
 
 const notAnActualDatabase = [
   {
@@ -34,10 +35,10 @@ const loginSuccess = data => {
   }
 }
 
-const loginFailed = {
+export const loginFailed = message => ({
   type: AUTH.FAILED,
-  error: 'email or password incorrect'
-}
+  error: message
+})
 
 export const login = async (dispatch, data) => {
   // do fake login kek
@@ -54,7 +55,7 @@ export const login = async (dispatch, data) => {
     return true
   }
 
-  dispatch(loginFailed)
+  dispatch(loginFailed(errors['AUTH.FAILED']))
 
   return false
 }

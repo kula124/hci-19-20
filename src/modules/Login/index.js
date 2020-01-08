@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { navigateTo } from 'gatsby'
 // import PropTypes from 'prop-types'
-
-import './style.module.scss'
+import { errors } from 'constants/errors'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import FlatButton from 'components/FlatButton'
-import { login } from 'actions/auth'
+import { login, loginFailed } from 'actions/auth'
 import { useStore } from 'store'
 import Spinner from 'components/Spinner'
+
+import './style.module.scss'
 
 const LoginPage = props => {
   const [email, setEmail] = useState('')
@@ -30,6 +31,9 @@ const LoginPage = props => {
             }} />
           <p>/&gt;</p>
         </div>
+
+        {store.error && <p styleName='error'>{store.error}</p>}
+
         <h2>Employee login:</h2>
         <input disabled={store.auth.inProgress}
           onChange={(e) => setEmail(e.target.value)}
@@ -43,6 +47,10 @@ const LoginPage = props => {
             const data = {
               password: password,
               username: email
+            }
+
+            if (!password || !email) {
+              return dispatch(loginFailed(errors['AUTH.EMPTY_INPUT']))
             }
 
             const cb = (await login(dispatch, data)) ? () => navigateTo('/') : () => {}
