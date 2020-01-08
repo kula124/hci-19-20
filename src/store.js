@@ -16,6 +16,7 @@ const mainReducer = (state, action) => {
   switch (action.type) {
     case AUTH.IN_PROGRESS:
       return ({
+        ...state,
         auth: {
           ...state.auth,
           inProgress: true
