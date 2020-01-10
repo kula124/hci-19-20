@@ -48,39 +48,44 @@ export const Cross = {
   listData: [
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Mobile',
       image: 'mobile_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: 'Modern design and high performance on the go! We support all mobile platforms'
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Web',
       image: 'web_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Enjoy modern look, cutting edge web technology and high performance on any device or browser!`
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Servers',
       image: 'server_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Rock solid backend with modern design patterns, enhanced by self-improving
       AI for ever increasing performance. Built to scale!`
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Analytics',
       image: 'analytics_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Website without analytics is like a ship without a compass.
       We provide you with any compass you want!`
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Desktop',
       image: 'desktop_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Development and usage through same codebase via cross-platform
       solutions such as Electron and Flutter or native`
     }
   ],
-  listStyleContainer: 'cross-container',
+  listStyleContainer: 'numbers-container',
   paragraph: `Technology is all about crossing bridges and bringing us closer together. Why not our apps too?
   We support development on all platforms and promise to provide best code possible on any device you choose!
   Be it cross-platform development, individual native applications or PWAs. You name it, we do it!`
