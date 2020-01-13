@@ -5,23 +5,18 @@ import UseRevealed from 'hooks/useRevealed'
 // eslint-disable-next-line no-unused-vars
 import s from './style.module.scss'
 
-const Spacer = ({ animation, styleProp }) => (
+const AnimatedSpacer = ({ animation, styleProp }) => (
   <UseRevealed>
     <div
-      className={animation}
-      styleName={styleProp}
+      className={animation || 'animated slideInRight'}
+      styleName={styleProp || 'main'}
     />
   </UseRevealed>
 )
 
-Spacer.propTypes = {
-  animation: PropTypes.string.isRequired,
-  styleProp: PropTypes.string.isRequired
+AnimatedSpacer.propTypes = {
+  animation: PropTypes.string,
+  styleProp: PropTypes.string
 }
 
-Spacer.defaultProps = {
-  animation: 'animated slideInRight',
-  styleProp: 'main'
-}
-
-export default Spacer
+export default AnimatedSpacer
