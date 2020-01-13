@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@import "../../styles/global.scss";
 // @import '../../styles/colors.scss';
 
 .main-numbers {
@@ -13,8 +13,7 @@
 
   h1 {
     @extend .main-title;
-    margin: 0 auto;
-    margin-top: 80px;
+    margin: auto auto;
     margin-bottom: 45px;
     display: block;
     background-image: linear-gradient(to left, #b000cf, #715eff, #403dff, #006878);
@@ -42,8 +41,8 @@
     margin-top: 80px;
     margin-bottom: 45px;
     display: block;
-    background: rgb(74,235,41);
-    background: linear-gradient(90deg, rgba(74,235,41,1) 0%, rgba(4,0,255,1) 50%, rgba(32,210,0,1) 100%);
+    background: rgb(74, 235, 41);
+    background: linear-gradient(90deg, rgba(74, 235, 41, 1) 0%, rgba(4, 0, 255, 1) 50%, rgba(32, 210, 0, 1) 100%);
     background-clip: text;
     color: transparent;
   }

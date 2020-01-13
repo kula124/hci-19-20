@@ -30,7 +30,7 @@ const Navigation = ({ refs, links }) => {
   }
 
   return (
-    <div className={sticky ? 'animated slideInDown' : 'animated slideInUp'}
+    <div className={sticky ? 'animated slideInDown' : 'animated fadeInUp'}
       styleName={sticky ? 'main-container sticky' : 'main-container' }>
       <div styleName='logo'>
         <Logo />
