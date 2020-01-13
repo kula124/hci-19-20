@@ -27,7 +27,7 @@ const inProgress = {
 }
 
 const loginSuccess = data => {
-  localStorage['auth'] = data
+  localStorage.setItem('auth', data)
 
   return {
     type: AUTH.SUCCESS,

@@ -1,11 +1,7 @@
 import React, { useContext, useReducer, createContext } from 'react'
 import { AUTH, NAVIGATION } from 'constants/actions'
 const initialStore = {
-  auth: {
-    inProgress: false,
-    token: null,
-    user: {}
-  },
+  auth: localStorage.getItem('auth'),
   error: null,
   navigation: []
 }
@@ -26,7 +22,7 @@ const mainReducer = (state, action) => {
       return ({
         ...state,
         auth: {
-          data: { ...localStorage[action.data.username] },
+          data: { ...localStorage.getItem(action.data.username) },
           inProgress: false
         }
       })
