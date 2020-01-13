@@ -16,6 +16,27 @@
   align-items: center;
 }
 
+a {
+  height: fit-content;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+a > li {
+  list-style: none;
+  border-left: solid purple 2px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  text-emphasis: bolder;
+  color: white;
+  transition: background .2s ease-in;
+  transition: color .1s ease-in;
+  cursor: pointer;
+  &:hover {
+    @extend .selected;
+  }
+}
+
 .selected {
   // background: $hover-color;
   color: salmon;
@@ -50,6 +71,9 @@
   p {
     padding-left: 10px;
     color: $code-bracket-color;
+    &:last-of-type {
+      padding-right: 10px;
+    }
   }
 }
 

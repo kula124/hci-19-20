@@ -43,6 +43,9 @@ const Navigation = ({ refs, links }) => {
             wrapperClassName: 'typewriter'
           }} />}
         <p>/&gt;</p>
+        <NavigationItem to='login'>
+        Login
+        </NavigationItem>
       </div>
       <nav>
         {links.map(({ id, label, ...rest }) => <NavigationItem key={id}
