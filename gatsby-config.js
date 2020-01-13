@@ -1,4 +1,7 @@
 /* eslint-disable */
+
+require('dotenv-safe').config()
+
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,6 +35,13 @@ module.exports = {
         // Exclude global styles from the plugin using a RegExp:
         exclude: `\/global\/`,
       }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_KEY,
+      },
     },
     {
       options: {

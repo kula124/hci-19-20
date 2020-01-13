@@ -7,10 +7,12 @@ import Navigation from 'modules/Navigation'
 import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
 import AnimatedSpacer from 'components/AnimatedSpacer'
+import BlogPostContainer from 'modules/BlogPostsContainer'
 
 const IndexPage = () => {
   const refs = {
     about: useRef(),
+    blog: useRef(),
     contact: useRef(),
     tech: useRef()
   }
@@ -28,6 +30,7 @@ const IndexPage = () => {
       <AnimatedSpacer />
       <CrossPlatformSection ref={refs.tech}
         visibilityProps={{ id: 'tech' }} />
+      <BlogPostContainer ref={refs.blog} />
     </>
   )
 }
