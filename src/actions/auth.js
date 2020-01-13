@@ -35,10 +35,22 @@ const loginSuccess = data => {
   }
 }
 
+const logoutSuccess = data => {
+  return {
+    type: AUTH.LOGOUT,
+    data
+  }
+}
+
 export const loginFailed = message => ({
   type: AUTH.FAILED,
   error: message
 })
+
+export const logout = async (dispatch) => {
+  localStorage.removeItem('auth')
+  dispatch(logoutSuccess())
+}
 
 export const login = async (dispatch, data) => {
   // do fake login kek

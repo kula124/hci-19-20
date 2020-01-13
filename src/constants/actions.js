@@ -1,6 +1,7 @@
 export const AUTH = {
   FAILED: 'FAILED',
   IN_PROGRESS: 'IN_PROGRESS',
+  LOGOUT: 'LOGOUT',
   SUCCESS: 'SUCCESS'
 }
 

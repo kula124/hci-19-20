@@ -34,6 +34,11 @@ const mainReducer = (state, action) => {
         },
         error: action.error
       })
+    case AUTH.LOGOUT:
+      return ({
+        ...state,
+        auth: undefined
+      })
     case NAVIGATION.ADD_VISIBLE:
       return ({
         ...state,
