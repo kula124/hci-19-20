@@ -29,7 +29,7 @@ const Layout = React.forwardRef(
 
 Layout.propTypes = {
   heading: PropTypes.string,
-  images: PropTypes.array.isRequired,
+  images: PropTypes.object,
   listData: PropTypes.array.isRequired,
   listStyleContainer: PropTypes.string.isRequired,
   paragraph: PropTypes.string,

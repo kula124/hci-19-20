@@ -32,7 +32,7 @@ const PageHeading = ({ Navigation, buttonOnClick, children }) => (
 PageHeading.propTypes = {
   Navigation: PropTypes.bool,
   buttonOnClick: PropTypes.func,
-  children: PropTypes.func
+  children: PropTypes.object
 }
 
 export default PageHeading

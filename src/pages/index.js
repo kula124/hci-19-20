@@ -6,7 +6,6 @@ import NumberSection from 'modules/Numbers'
 import Navigation from 'modules/Navigation'
 import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
-import VisibilitySensor from 'hooks/useIsVisible'
 import AnimatedSpacer from 'components/AnimatedSpacer'
 
 const IndexPage = () => {
@@ -18,19 +17,17 @@ const IndexPage = () => {
 
   return (
     <>
-      <PageHeading buttonOnClick={() => ScrollToRef(refs.tech)}
+      <PageHeading buttonOnClick={() => ScrollToRef(refs.about)}
         Navigation>
         <Navigation
           links={links}
           refs={refs} />
       </PageHeading>
-      <VisibilitySensor id={'tech'}>
-        <div ref={refs.tech}>
-          <NumberSection />
-          <AnimatedSpacer />
-          <CrossPlatformSection />
-        </div>
-      </VisibilitySensor>
+      <NumberSection ref={refs.about}
+        visibilityProps={{ id: 'about' }} />
+      <AnimatedSpacer />
+      <CrossPlatformSection ref={refs.tech}
+        visibilityProps={{ id: 'tech' }} />
     </>
   )
 }

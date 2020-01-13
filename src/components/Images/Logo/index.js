@@ -8,8 +8,8 @@ const Image = () => {
   query {
     codejarLogo: file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
-        fixed(width: 60, height: 60, quality:100) {
-          ...GatsbyImageSharpFixed_tracedSVG
+        fluid(maxWidth: 60, maxHeight: 60, quality:100) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
@@ -17,7 +17,7 @@ const Image = () => {
 `)
 
   return (
-    <Img fixed={get(data, 'codejarLogo.childImageSharp.fixed')} />
+    <Img fluid={get(data, 'codejarLogo.childImageSharp.fluid')} />
   )
 }
 

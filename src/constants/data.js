@@ -1,40 +1,46 @@
 export const Numbers = {
-  heading: 'May the numbers be ever in your favour!',
+  heading: 'May the numbers be ever in your favour',
   listData: [
     {
       animationListItemClass: 'animated flipInY',
       count: 280686,
+      header: 'Hard work',
       image: 'code_num.png',
       listItemClassName: 'numbers-item',
-      text: 'lines of sleek clean code written by our developers and still counting'
+      text: 'Lines of sleek clean code'
     },
     {
       animationListItemClass: 'animated flipInY',
       count: 40824,
+      header: 'Collaboration',
       image: 'git_num.png',
       listItemClassName: 'numbers-item',
-      text: `commits proves we are committed to write functional and 
-      efficient production code reviewed by our QA and client personally`
+      text: `Git commits`
     },
     {
       animationListItemClass: 'animated flipInY',
       count: 6,
+      header: 'Success',
       image: 'experience_num.png',
       listItemClassName: 'numbers-item',
-      text: 'major projects that made it to production and are used by millions of users around the world'
+      text: 'Successful projects'
     },
     {
       animationListItemClass: 'animated flipInY',
       count: 5,
+      header: 'Partners',
       image: 'client_num.png',
       listItemClassName: 'numbers-item',
-      text: 'happy clients. Are you ready to join them?'
+      text: 'Happy clients'
     }
   ],
   listStyleContainer: 'numbers-container',
-  paragraph: `Luckily, they are in ours. Let the numbers speak! Experience in number of
-  challenging projects, sleek and clean code and happiness of our clients gives us confidence
-  in tackling any challenge you may throw at us!`
+  paragraph: `Luckily, they are in ours. We employ 20 experienced developers in Croatia. This means no trail and error,
+    because we know what we are doing and we do it well. 
+    We’ll discuss every pain point together. Analyse user experiences and consider the current technologies, 
+    or you can give us a task and we’ll keep you in the loop about the development. You focus on the business
+    and let us do the tech. 
+    Our numbers speak for us:`
 }
 
 export const Cross = {
@@ -42,39 +48,44 @@ export const Cross = {
   listData: [
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Mobile',
       image: 'mobile_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: 'Modern design and high performance on the go! We support all mobile platforms'
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Web',
       image: 'web_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Enjoy modern look, cutting edge web technology and high performance on any device or browser!`
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Servers',
       image: 'server_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Rock solid backend with modern design patterns, enhanced by self-improving
       AI for ever increasing performance. Built to scale!`
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Analytics',
       image: 'analytics_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Website without analytics is like a ship without a compass.
       We provide you with any compass you want!`
     },
     {
       animationListItemClass: 'animated bounceInRight',
+      header: 'Desktop',
       image: 'desktop_cross.png',
-      listItemClassName: 'cross-item',
+      listItemClassName: 'numbers-item',
       text: `Development and usage through same codebase via cross-platform
       solutions such as Electron and Flutter or native`
     }
   ],
-  listStyleContainer: 'cross-container',
+  listStyleContainer: 'numbers-container',
   paragraph: `Technology is all about crossing bridges and bringing us closer together. Why not our apps too?
   We support development on all platforms and promise to provide best code possible on any device you choose!
   Be it cross-platform development, individual native applications or PWAs. You name it, we do it!`

@@ -1,15 +1,11 @@
 export const links = [
   {
-    id: 'tech',
-    label: 'Technology'
-  },
-  {
     id: 'about',
     label: 'About'
   },
   {
-    id: 'contact',
-    label: 'Contact'
+    id: 'tech',
+    label: 'Technology'
   },
   {
     id: 'blog',
@@ -23,5 +19,9 @@ export const links = [
     id: 'login',
     label: 'Login',
     to: '/login/'
+  },
+  {
+    id: 'contact',
+    label: 'Contact'
   }
 ]
