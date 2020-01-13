@@ -7,6 +7,8 @@ import PropTypes from 'prop-types'
 import { useStore } from 'store'
 import NavigationItem from './NavigationItem'
 import './style.module.scss'
+import AuthProtector from 'components/AuthProtector'
+import { logout } from 'actions/auth'
 
 const isElementVisible = (element, nav) => {
   return nav[1] ? nav[1] === element : nav[0] === element
@@ -15,7 +17,7 @@ const isElementVisible = (element, nav) => {
 const Navigation = ({ refs, links }) => {
   const [sticky, setSticky] = useState(false)
   const [visible, setVisible] = useState(false)
-  const { store: { navigation } } = useStore()
+  const { store: { navigation, auth }, dispatch } = useStore()
 
   window.onscroll = () => {
     if (document.documentElement.scrollTop < window.innerHeight + 100) {
@@ -43,9 +45,20 @@ const Navigation = ({ refs, links }) => {
             wrapperClassName: 'typewriter'
           }} />}
         <p>/&gt;</p>
-        <NavigationItem to='login'>
-        Login
-        </NavigationItem>
+        {auth
+          ? <a>
+            <li onClick={logout(dispatch)}>
+                Logout
+            </li>
+          </a>
+          : <NavigationItem to='login'>
+            Login
+          </NavigationItem>}
+        <AuthProtector>
+          <NavigationItem to='profile'>
+            Profile
+          </NavigationItem>
+        </AuthProtector>
       </div>
       <nav>
         {links.map(({ id, label, ...rest }) => <NavigationItem key={id}

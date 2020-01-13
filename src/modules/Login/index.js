@@ -3,6 +3,7 @@ import { navigateTo } from 'gatsby'
 // import PropTypes from 'prop-types'
 import { errors } from 'constants/errors'
 import { ExecuteOnRef } from 'helper'
+import get from 'lodash.get'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import FlatButton from 'components/FlatButton'
@@ -38,16 +39,16 @@ const LoginPage = props => {
         {store.error && <p styleName='error'>{store.error}</p>}
 
         <h2>Employee login:</h2>
-        <input disabled={store.auth.inProgress}
+        <input disabled={get(store, 'auth.inProgress')}
           onChange={(e) => setEmail(e.target.value)}
           onKeyPress={e => e.key.toLowerCase() === 'enter' && ExecuteOnRef(buttonRef, 'click')}
           placeholder='Email'/>
-        <input disabled={store.auth.inProgress}
+        <input disabled={get(store, 'auth.inProgress')}
           onChange={(e) => setPassword(e.target.value)}
           onKeyPress={e => e.key.toLowerCase() === 'enter' && ExecuteOnRef(buttonRef, 'click')}
           placeholder='Password'
           type='password'/>
-        <FlatButton disabled={store.auth.inProgress}
+        <FlatButton disabled={get(store, 'auth.inProgress')}
           onClick={async () => {
             const data = {
               password: password,
@@ -66,7 +67,7 @@ const LoginPage = props => {
           styleProp='login'
           type='submit'>
           {
-            store.auth.inProgress
+            get(store, 'auth.inProgress')
               ? <Spinner />
               : <span>Login</span>
           }
