@@ -1,0 +1,19 @@
+@import '../../styles/global.scss';
+
+.main-container {
+    ul {
+        margin-top: 50px;
+        display: grid;
+        padding: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 40px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+}
