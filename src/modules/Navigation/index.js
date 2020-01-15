@@ -45,9 +45,9 @@ const Navigation = ({ refs, links }) => {
             wrapperClassName: 'typewriter'
           }} />}
         <p>/&gt;</p>
-        {auth
+        {auth.status
           ? <a>
-            <li onClick={logout(dispatch)}>
+            <li onClick={() => dispatch(logout())}>
                 Logout
             </li>
           </a>
