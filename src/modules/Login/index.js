@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { navigateTo } from 'gatsby'
+import React, { useState, useEffect } from 'react'
+import { navigate } from 'gatsby'
 // import PropTypes from 'prop-types'
 import { errors } from 'constants/errors'
 import { ExecuteOnRef } from 'helper'
@@ -7,7 +7,7 @@ import get from 'lodash.get'
 import Logo from 'components/Images/Logo'
 import Typewriter from 'typewriter-effect'
 import FlatButton from 'components/FlatButton'
-import { login, loginFailed } from 'actions/auth'
+import { login, loginFail } from 'actions/auth'
 import { useStore } from 'store'
 import Spinner from 'components/Spinner'
 
@@ -19,6 +19,12 @@ const LoginPage = props => {
   const { store, dispatch } = useStore()
 
   const buttonRef = React.createRef()
+
+  useEffect(() => {
+    if (get(store, 'auth.status')) {
+      navigate('/')
+    }
+  }, [store.auth.status])
 
   return (
     <div styleName='root'>
@@ -56,12 +62,10 @@ const LoginPage = props => {
             }
 
             if (!password || !email) {
-              return dispatch(loginFailed(errors['AUTH.EMPTY_INPUT']))
+              return dispatch(loginFail(errors['AUTH.EMPTY_INPUT']))
             }
 
-            const cb = (await login(dispatch, data)) ? () => navigateTo('/') : () => {}
-
-            cb()
+            await dispatch(login(data))
           }}
           ref={buttonRef}
           styleProp='login'
