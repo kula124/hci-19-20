@@ -3,8 +3,6 @@ import React from 'react'
 import LoginModule from 'modules/Login'
 
 const LoginPage = props =>
-  <LoginModule>
-
-  </LoginModule>
+  <LoginModule />
 
 export default LoginPage

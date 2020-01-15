@@ -14,7 +14,7 @@ const FlatButton = React.forwardRef(({ onClick, styleProp, children, ...rest }, 
   </button>)
 
 FlatButton.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.any,
   onClick: PropTypes.func.isRequired,
   styleProp: PropTypes.string
 }
