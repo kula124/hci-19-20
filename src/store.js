@@ -1,7 +1,16 @@
+import ls from 'local-storage'
+
 import React, { useContext, useReducer, createContext } from 'react'
 import { AUTH, NAVIGATION } from 'constants/actions'
+
+const authData = ls.get('auth')
+
 const initialStore = {
-  auth: localStorage.getItem('auth'),
+  auth: {
+    data: authData,
+    inProgress: false,
+    status: !!authData
+  },
   error: null,
   navigation: []
 }
@@ -15,29 +24,34 @@ const mainReducer = (state, action) => {
         ...state,
         auth: {
           ...state.auth,
-          inProgress: true
+          inProgress: true,
+          status: false
         }
       })
     case AUTH.SUCCESS:
       return ({
         ...state,
         auth: {
-          data: { ...localStorage.getItem(action.data.username) },
-          inProgress: false
+          data: JSON.parse(ls.get('auth')),
+          inProgress: false,
+          status: true
         }
       })
     case AUTH.FAILED:
       return ({
         ...state,
         auth: {
-          inProgress: false
+          inProgress: false,
+          status: false
         },
         error: action.error
       })
     case AUTH.LOGOUT:
       return ({
         ...state,
-        auth: undefined
+        auth: {
+          status: false
+        }
       })
     case NAVIGATION.ADD_VISIBLE:
       return ({
@@ -54,10 +68,14 @@ const mainReducer = (state, action) => {
   }
 }
 
+const middleware = dispatch => async action => Promise.resolve(action(dispatch))
+
 export const StoreProvider = (props) => {
   const [store, dispatch] = useReducer(mainReducer, initialStore)
 
-  const storeData = { dispatch, store }
+  const middlewareDispatch = middleware(dispatch)
+
+  const storeData = { dispatch: middlewareDispatch, store }
 
   return <StoreContext.Provider value={storeData}
     {...props} />
