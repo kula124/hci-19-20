@@ -1,0 +1,39 @@
+.main {
+    display: flex;
+    flex-flow: column;
+    background: url(https://i.imgur.com/mmVZxbz.jpg);
+    width: 100%;
+    /* width: 500px; */
+    /* height: 100vh; */
+    background-position-y: bottom;
+    margin: 0 auto;
+    background-size: cover;
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+}
+
+.label {
+    font-weight: bolder;
+    color: white;
+    padding-right: 30px
+}
+
+.grid {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    padding: 20px 20px;
+    margin: 0 auto;
+    width: fit-content;
+    display: grid;
+    color: pink;
+    grid-template-columns: 1fr 1fr;
+}
+
+.todo {
+    
+}
