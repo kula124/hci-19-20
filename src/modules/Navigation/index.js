@@ -15,17 +15,20 @@ const isElementVisible = (element, nav) => {
 const Navigation = ({ refs, links }) => {
   const [sticky, setSticky] = useState(false)
   const [visible, setVisible] = useState(false)
+
   const { store: { navigation } } = useStore()
 
-  window.onscroll = () => {
-    if (document.documentElement.scrollTop < window.innerHeight + 100) {
-      setSticky(false)
-    } else {
-      setSticky(true)
-    }
+  if (typeof window !== `undefined`) {
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop < window.innerHeight + 100) {
+        setSticky(false)
+      } else {
+        setSticky(true)
+      }
 
-    if (document.documentElement.scrollHeight >= window.innerHeight) {
-      setVisible(true)
+      if (document.documentElement.scrollHeight >= window.innerHeight) {
+        setVisible(true)
+      }
     }
   }
 
