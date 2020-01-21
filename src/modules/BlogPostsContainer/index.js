@@ -42,7 +42,7 @@ const BlogPostContainer = React.forwardRef((props, ref) => {
         updatedAt
         coverImage {
           fluid {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid
           }
         }
       }
