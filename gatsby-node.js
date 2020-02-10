@@ -1,9 +1,15 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+// require('dotenv-safe').config()
+
+exports.onCreateWebpackConfig = ({ stage, actions, plugins }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules']
-    }
+    },
+    plugins: [
+      new Dotenv()
+    ]
   })
 }

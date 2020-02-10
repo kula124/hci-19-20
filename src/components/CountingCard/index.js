@@ -24,7 +24,7 @@ const CountingCard = ({
     <div styleName='image-container'>
       <Img fixed={image.node.childImageSharp.fixed} />
     </div>
-    {and(visible, count !== 0) && <Count
+    {and(visible, !!count) && <Count
       duration={4}
       end={count}
       separator=','

@@ -15,7 +15,7 @@ const NavItem = ({ to, onClick, children, ...rest }) => {
 }
 
 NavItem.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.any,
   onClick: PropTypes.func,
   to: PropTypes.string
 }

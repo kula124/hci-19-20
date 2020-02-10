@@ -1,9 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import './style.module.scss'
+import s from './style.module.scss'
 
-const Spinner = () =>
-  <div styleName="lds-ellipsis">
+const Spinner = ({ styleProp, ...rest }) =>
+  <div styleName={styleProp ? `lds-ellipsis ${styleProp}` : 'lds-ellipsis'}
+    {...rest} >
     <div>
     </div>
     <div>
@@ -13,5 +15,9 @@ const Spinner = () =>
     <div>
     </div>
   </div>
+
+Spinner.propTypes = {
+  styleProp: PropTypes.string
+}
 
 export default Spinner

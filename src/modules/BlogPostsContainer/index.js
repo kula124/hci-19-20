@@ -59,7 +59,7 @@ const BlogPostContainer = React.forwardRef((props, ref) => {
         <AnimatedSpacer offset={{ bottom: 100 }}
           styleProp={'blog'}/>
         <ul>
-          {data.map(({ id, ...rest }) => <BlogPost key={id}
+          {data.map(({ id, ...rest }) => <BlogPost key={Math.random()}
             {...rest} />)}
         </ul>
       </section>

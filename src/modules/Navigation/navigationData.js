@@ -16,11 +16,6 @@ export const links = [
     label: 'Jobs'
   },
   {
-    id: 'login',
-    label: 'Login',
-    to: '/login/'
-  },
-  {
     id: 'contact',
     label: 'Contact'
   }
