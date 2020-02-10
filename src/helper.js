@@ -46,3 +46,17 @@ export const api = {
     baseURL: process.env.API_ENDPOINT
   })
 }
+
+export const mappers = {
+  blogList: {
+    'posts': 'allContentfulBlogPost.nodes'
+  },
+  blogPosts: {
+    'body': 'body.body',
+    'coverImage': 'coverImage.fluid',
+    'id': 'body.id',
+    'summary': 'summary.internal.content',
+    'title': 'title',
+    'updatedAt': 'updatedAt'
+  }
+}
