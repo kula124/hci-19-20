@@ -8,17 +8,14 @@ const notAnActualDatabase = [
   {
     username: 'kula',
     password: 'admin', // very secure
-    isAdmin: true
+    isAdmin: true,
+    id: 1
   },
   {
     username: 'melani',
     password: 'admin', // source:
-    isAdmin: true
-  },
-  {
-    username: 'matko',
-    password: 'test', // "dude, trust me"
-    isAdmin: false
+    isAdmin: true,
+    id: 2
   }
 ]
 

@@ -1,62 +1,92 @@
 import React, { useEffect, useState } from 'react'
-import { api } from 'helper'
 
+import { api } from 'helper'
 import { useStore } from 'store'
 
 import './profile.module.scss'
+import Spinner from 'components/Spinner'
+import Todo from 'modules/Todo'
 
 const Profile = props => {
-  const { store, dispatch } = useStore()
+  const { store } = useStore()
   const [state, setState] = useState({ loading: true })
-  const [todos, setTodo] = useState({ loading: true })
+  const [checkBoxes, setCheckbox] = useState({})
+  const [todos, setTodo] = useState({ data: [], loading: true })
 
   useEffect(() => {
-    api.get('users', { id: 1 })
-      .then(data => {
-        console.log('TCL: data', data.data[0])
-
-        return data
-      })
-      .then(data => setState({ loading: false, ...data.data[0] }))
+    setState({ loading: true })
+    api.get('users', { id: store.auth.data.id })
+      .then(data => setState({ ...state, loading: false, ...data.data[0] }))
+      .catch(() => setState({ error: 'Failed to fetch' })) // add actual handler maybe kek
   }, [])
 
   useEffect(() => {
-    api.get('todos', { userId: 1 })
+    api.get('todos', { userId: store.auth.data.id })
       .then(data => {
-        console.log('TCL: todo', data.data)
+        setTodo({ ...todos, data: data.data, loading: false })
 
-        return data
+        return data.data
       })
-      .then(data => setTodo({ loading: false, data: data.data }))
-  }, [])
+      .then(data => setCheckbox(
+        data.reduce((acc, el) => {
+          acc[el.urgency] = true
 
-  if (state.loading) { return null }
+          return acc
+        }, {})
+      ))
+  }, [])
 
   const { username, email, avatar } = state
 
-  console.log(state)
+  if (state.loading) {
+    return <Spinner styleProp='center' />
+  }
 
   return (
-    <section styleName='main'>
-      <img src={avatar} />
-      <div styleName='grid'>
-        <span styleName='label'>
+    <>
+      <header styleName='main'>
+        <img src={avatar} />
+        <div styleName='grid'>
+          <span styleName='label'>
           username:
-        </span>
-        <span>
-          {username}
-        </span>
-        <span styleName='label'>
+          </span>
+          <span>
+            {username}
+          </span>
+          <span styleName='label'>
           email:
-        </span>
-        <span>
-          {email}
-        </span>
-      </div>
+          </span>
+          <span>
+            {email}
+          </span>
+        </div>
+      </header>
+      {!state.loading &&
       <section styleName='todo'>
-
+        <header>
+          <h2>{`Todo list for ${state.username}:`}</h2>
+          <ul>
+            {todos.data.map(el =>
+              <li key={el.id}>
+                <input checked={checkBoxes[el.urgency]}
+                  name={el.urgency}
+                  onChange={
+                    event => setCheckbox({ ...checkBoxes, [event.target.name]: !checkBoxes[el.urgency] })
+                  }
+                  type='checkbox' />
+                <label htmlFor={el.urgency}>
+                  {el.urgency}
+                </label>
+              </li>
+            )}
+          </ul>
+        </header>
+        <ul>
+          <Todo data={todos.data.filter(el => !!checkBoxes[el.urgency])}/>
+        </ul>
       </section>
-    </section>
+      }
+    </>
   )
 }
 

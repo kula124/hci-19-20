@@ -1,0 +1,33 @@
+.main-container {
+    text-decoration: none;
+    list-style: none;
+    height: auto;
+    padding: 0 40px;
+
+    margin-bottom: 30px;
+
+    &:last-of-type {
+        margin: 0;
+    }
+
+    header {
+        margin: 10px 0;
+        margin-top: 0;
+        padding-top: 10px;
+        display: flex;
+        flex-flow: column;
+
+        h3, h2 {
+            margin: 0 0;
+        } 
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        span {
+            display: inline-block;
+            margin: 30px 0 15px 0; 
+        }
+    }
+}

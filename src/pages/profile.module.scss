@@ -1,3 +1,5 @@
+@import '../../src/styles/global.scss';
+
 .main {
     display: flex;
     flex-flow: column;
@@ -35,5 +37,29 @@
 }
 
 .todo {
-    
+    background: #3f51b5;
+    > ul {
+        max-width: 600px;
+        margin:  auto;
+        padding: 0;
+    }
+
+    header {
+        h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+        width: fit-content;
+        margin: 0 auto;
+        > ul {
+            padding: 0;
+            width: 150%;
+            transform: translateX(-20%);
+            display: flex;
+            justify-content: space-around;
+            font-size: 22px;
+        }
+    }
+
+    padding-bottom: 30px;
 }
