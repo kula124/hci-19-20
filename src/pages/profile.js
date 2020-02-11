@@ -7,7 +7,7 @@ import './profile.module.scss'
 import Spinner from 'components/Spinner'
 import Todo from 'modules/Todo'
 import AuthProtector from 'components/AuthProtector'
-import { navigateTo } from 'gatsby'
+import { navigate } from 'gatsby'
 
 const Profile = props => {
   const { store } = useStore()
@@ -42,8 +42,8 @@ const Profile = props => {
     if (state.loading) {
       return <Spinner styleProp='center' />
     }
-  } else {
-    navigateTo('/')
+  } else if ((typeof window !== `undefined`)) {
+    navigate('/')
   }
 
   const { username, email, avatar } = state

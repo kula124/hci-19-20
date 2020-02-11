@@ -42,8 +42,8 @@ export const responseMapper = map => object => {
 
 export const api = {
   get: async (url, params) => axios.get(url, {
-    params,
-    baseURL: process.env.API_ENDPOINT
+    baseURL: process.env.API_ENDPOINT,
+    params
   })
 }
 

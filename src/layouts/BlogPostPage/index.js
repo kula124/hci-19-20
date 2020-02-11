@@ -24,7 +24,7 @@ const BlogPost = ({ pageContext }) => {
     prev = document.body.scrollTop
   }
 
-  if (document && window) {
+  if (typeof window !== `undefined` && typeof document !== `undefined`) {
     window.onScroll = scrollController(document.body.scrollTop)
   }
 
