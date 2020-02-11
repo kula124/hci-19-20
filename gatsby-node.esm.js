@@ -16,7 +16,10 @@ exports.onCreateWebpackConfig = ({ stage, actions, plugins }) => {
 }
 
 const listMapper = responseMapper(mappers.blogList)
-const blogPostMapper = responseMapper(mappers.blogPosts)
+const blogPostMapper = responseMapper({
+  ...mappers.blogPosts,
+  body: 'body.json'
+})
 
 exports.createPages = async ({ graphql, actions }) => {
   const raw = await graphql(`{
@@ -28,8 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
         body {
-          body
-          id
+          json
         }
         title
         updatedAt
