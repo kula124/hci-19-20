@@ -1,15 +1,3 @@
-const path = require('path')
-const Dotenv = require('dotenv-webpack')
-
-// require('dotenv-safe').config()
-
-exports.onCreateWebpackConfig = ({ stage, actions, plugins }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules']
-    },
-    plugins: [
-      new Dotenv()
-    ]
-  })
-}
+// eslint-disable-next-line no-global-assign
+require = require('esm')(module)
+module.exports = require('./gatsby-node.esm.js')
