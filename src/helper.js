@@ -55,6 +55,7 @@ export const mappers = {
     'body': 'body.body',
     'coverImage': 'coverImage.fluid',
     'id': 'body.id',
+    'slug': 'slug',
     'summary': 'summary.internal.content',
     'title': 'title',
     'updatedAt': 'updatedAt'

@@ -34,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
           json
         }
         title
+        slug
         updatedAt
         coverImage {
           fluid {
@@ -55,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
     context: {
       ...e
     },
-    path: `posts/post${index}`,
-    slug: `posts/post${index}`
+    path: `posts/${e.slug}`,
+    slug: `posts/${e.slug}`
   }))
 }

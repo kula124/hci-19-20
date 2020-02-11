@@ -29,7 +29,7 @@ const BlogPost = ({ pageContext }) => {
   }
 
   return (
-    <>
+    <div styleName='main-container'>
       <header className='animated fadeInDown'
         styleName={`${show ? 'sticky' : 'hidden'}`}>
         <section styleName='logo'>
@@ -59,7 +59,7 @@ const BlogPost = ({ pageContext }) => {
         <span>Nex</span>
         <span>Prev</span>
       </footer>
-    </>
+    </div>
   )
 }
 

@@ -6,6 +6,8 @@ import { useStore } from 'store'
 import './profile.module.scss'
 import Spinner from 'components/Spinner'
 import Todo from 'modules/Todo'
+import AuthProtector from 'components/AuthProtector'
+import { navigateTo } from 'gatsby'
 
 const Profile = props => {
   const { store } = useStore()
@@ -13,55 +15,60 @@ const Profile = props => {
   const [checkBoxes, setCheckbox] = useState({})
   const [todos, setTodo] = useState({ data: [], loading: true })
 
-  useEffect(() => {
-    setState({ loading: true })
-    api.get('users', { id: store.auth.data.id })
-      .then(data => setState({ ...state, loading: false, ...data.data[0] }))
-      .catch(() => setState({ error: 'Failed to fetch' })) // add actual handler maybe kek
-  }, [])
+  if (store.auth.status) {
+    useEffect(() => {
+      setState({ loading: true })
+      api.get('users', { id: store.auth.data.id })
+        .then(data => setState({ ...state, loading: false, ...data.data[0] }))
+        .catch(() => setState({ error: 'Failed to fetch' })) // add actual handler maybe kek
+    }, [])
 
-  useEffect(() => {
-    api.get('todos', { userId: store.auth.data.id })
-      .then(data => {
-        setTodo({ ...todos, data: data.data, loading: false })
+    useEffect(() => {
+      api.get('todos', { userId: store.auth.data.id })
+        .then(data => {
+          setTodo({ ...todos, data: data.data, loading: false })
 
-        return data.data
-      })
-      .then(data => setCheckbox(
-        data.reduce((acc, el) => {
-          acc[el.urgency] = true
+          return data.data
+        })
+        .then(data => setCheckbox(
+          data.reduce((acc, el) => {
+            acc[el.urgency] = true
 
-          return acc
-        }, {})
-      ))
-  }, [])
+            return acc
+          }, {})
+        ))
+    }, [])
+
+    if (state.loading) {
+      return <Spinner styleProp='center' />
+    }
+  } else {
+    navigateTo('/')
+  }
 
   const { username, email, avatar } = state
 
-  if (state.loading) {
-    return <Spinner styleProp='center' />
-  }
-
   return (
-    <>
-      <header styleName='main'>
-        <img src={avatar} />
-        <div styleName='grid'>
-          <span styleName='label'>
+    <AuthProtector>
+      <div styleName='main-container'>
+        <header styleName='main'>
+          <img src={avatar} />
+          <div styleName='grid'>
+            <span styleName='label'>
           username:
-          </span>
-          <span>
-            {username}
-          </span>
-          <span styleName='label'>
+            </span>
+            <span>
+              {username}
+            </span>
+            <span styleName='label'>
           email:
-          </span>
-          <span>
-            {email}
-          </span>
-        </div>
-      </header>
-      {!state.loading &&
+            </span>
+            <span>
+              {email}
+            </span>
+          </div>
+        </header>
+        {!state.loading &&
       <section styleName='todo'>
         <header>
           <h2>{`Todo list for ${state.username}:`}</h2>
@@ -85,8 +92,9 @@ const Profile = props => {
           <Todo data={todos.data.filter(el => !!checkBoxes[el.urgency])}/>
         </ul>
       </section>
-      }
-    </>
+        }
+      </div>
+    </AuthProtector>
   )
 }
 

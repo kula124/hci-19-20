@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import { responseMapper, mappers } from 'helper'
 import AnimatedSpacer from 'components/AnimatedSpacer'
@@ -26,6 +26,7 @@ const BlogPostContainer = React.forwardRef((props, ref) => {
           id
         }
         title
+        slug
         updatedAt
         coverImage {
           fluid {
@@ -46,8 +47,16 @@ const BlogPostContainer = React.forwardRef((props, ref) => {
         <AnimatedSpacer offset={{ bottom: 100 }}
           styleProp={'blog'}/>
         <ul>
-          {data.map(({ id, ...rest }) => <BlogPost key={Math.random()}
-            {...rest} />)}
+          {data.map(({ slug, ...rest }, index) => {
+            return index < 6
+              ? <Link key={Math.random()}
+                to={`posts/${slug}`}>
+                <BlogPost
+                  {...rest} />
+              </Link>
+              : null
+          }
+          )}
         </ul>
       </section>
     </VisibilitySensor>

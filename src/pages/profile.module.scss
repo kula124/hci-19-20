@@ -1,65 +1,68 @@
 @import '../../src/styles/global.scss';
 
-.main {
-    display: flex;
-    flex-flow: column;
-    background: url(https://i.imgur.com/mmVZxbz.jpg);
-    width: 100%;
-    /* width: 500px; */
-    /* height: 100vh; */
-    background-position-y: bottom;
-    margin: 0 auto;
-    background-size: cover;
+.main-container {
 
-    img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
+    .main {
+        display: flex;
+        flex-flow: column;
+        background: url(https://i.imgur.com/mmVZxbz.jpg);
+        width: 100%;
+        /* width: 500px; */
+        /* height: 100vh; */
+        background-position-y: bottom;
         margin: 0 auto;
-        padding: 50px 0;
-    }
-}
+        background-size: cover;
 
-.label {
-    font-weight: bolder;
-    color: white;
-    padding-right: 30px
-}
-
-.grid {
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    padding: 20px 20px;
-    margin: 0 auto;
-    width: fit-content;
-    display: grid;
-    color: pink;
-    grid-template-columns: 1fr 1fr;
-}
-
-.todo {
-    background: #3f51b5;
-    > ul {
-        max-width: 600px;
-        margin:  auto;
-        padding: 0;
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
     }
 
-    header {
-        h2 {
+    .label {
+        font-weight: bolder;
+        color: white;
+        padding-right: 30px
+    }
+
+    .grid {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        padding: 20px 20px;
+        margin: 0 auto;
+        width: fit-content;
+        display: grid;
+        color: pink;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .todo {
+        background: #3f51b5;
+        > ul {
+            max-width: 600px;
+            margin:  auto;
+            padding: 0;
+        }
+
+        header {
+            h2 {
+                width: fit-content;
+                margin: 0 auto;
+            }
             width: fit-content;
             margin: 0 auto;
+            > ul {
+                padding: 0;
+                width: 150%;
+                transform: translateX(-20%);
+                display: flex;
+                justify-content: space-around;
+                font-size: 22px;
+            }
         }
-        width: fit-content;
-        margin: 0 auto;
-        > ul {
-            padding: 0;
-            width: 150%;
-            transform: translateX(-20%);
-            display: flex;
-            justify-content: space-around;
-            font-size: 22px;
-        }
-    }
 
-    padding-bottom: 30px;
+        padding-bottom: 30px;
+    }
 }
