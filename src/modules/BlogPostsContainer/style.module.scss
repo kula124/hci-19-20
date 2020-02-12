@@ -2,12 +2,27 @@
 
 .main-container {
     ul {
+
+        a {
+            text-decoration: none;
+            color: black;
+            margin: 0 5px;
+            padding: 0 -5px;
+        }
+
         margin-top: 50px;
         display: grid;
         padding: 0;
+        width: 50%;
+        text-align: center;
         grid-template-columns: 1fr 1fr 1fr;
-        width: fit-content;
+        align-items: flex-start;
+        justify-content: center;
         margin: 0 auto;
+
+        h3 {
+            height: 45px;
+        }
     }
 
     h2 {

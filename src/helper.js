@@ -42,7 +42,22 @@ export const responseMapper = map => object => {
 
 export const api = {
   get: async (url, params) => axios.get(url, {
-    params,
-    baseURL: process.env.API_ENDPOINT
+    baseURL: process.env.API_ENDPOINT,
+    params
   })
+}
+
+export const mappers = {
+  blogList: {
+    'posts': 'allContentfulBlogPost.nodes'
+  },
+  blogPosts: {
+    'body': 'body.body',
+    'coverImage': 'coverImage.fluid',
+    'id': 'body.id',
+    'slug': 'slug',
+    'summary': 'summary.internal.content',
+    'title': 'title',
+    'updatedAt': 'updatedAt'
+  }
 }

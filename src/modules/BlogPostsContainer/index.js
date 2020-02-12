@@ -1,28 +1,15 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
-import { responseMapper } from 'helper'
+import { responseMapper, mappers } from 'helper'
 import AnimatedSpacer from 'components/AnimatedSpacer'
 import BlogPost from 'layouts/BlogSummary'
 import VisibilitySensor from 'hooks/useIsVisible'
 
 import './style.module.scss'
 
-const mapList = {
-  'posts': 'allContentfulBlogPost.nodes'
-}
-
-const mapBlog = {
-  'body': 'body.body',
-  'coverImage': 'coverImage.fluid',
-  'id': 'body.id',
-  'summary': 'summary.internal.content',
-  'title': 'title',
-  'updatedAt': 'updatedAt'
-}
-
-const listMapper = responseMapper(mapList)
-const blogPostMapper = responseMapper(mapBlog)
+const listMapper = responseMapper(mappers.blogList)
+const blogPostMapper = responseMapper(mappers.blogPosts)
 
 // eslint-disable-next-line react/display-name
 const BlogPostContainer = React.forwardRef((props, ref) => {
@@ -39,6 +26,7 @@ const BlogPostContainer = React.forwardRef((props, ref) => {
           id
         }
         title
+        slug
         updatedAt
         coverImage {
           fluid {
@@ -59,8 +47,16 @@ const BlogPostContainer = React.forwardRef((props, ref) => {
         <AnimatedSpacer offset={{ bottom: 100 }}
           styleProp={'blog'}/>
         <ul>
-          {data.map(({ id, ...rest }) => <BlogPost key={Math.random()}
-            {...rest} />)}
+          {data.map(({ slug, ...rest }, index) => {
+            return index < 6
+              ? <Link key={Math.random()}
+                to={`posts/${slug}`}>
+                <BlogPost
+                  {...rest} />
+              </Link>
+              : null
+          }
+          )}
         </ul>
       </section>
     </VisibilitySensor>
