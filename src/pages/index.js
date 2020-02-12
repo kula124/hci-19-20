@@ -8,12 +8,14 @@ import CrossPlatformSection from 'modules/CrossPlatform'
 import { links } from 'modules/Navigation/navigationData'
 import AnimatedSpacer from 'components/AnimatedSpacer'
 import BlogPostContainer from 'modules/BlogPostsContainer'
+import Jobs from 'modules/Jobs'
 
 const IndexPage = () => {
   const refs = {
     about: useRef(),
     blog: useRef(),
     contact: useRef(),
+    jobs: useRef(),
     tech: useRef()
   }
 
@@ -31,6 +33,8 @@ const IndexPage = () => {
       <CrossPlatformSection ref={refs.tech}
         visibilityProps={{ id: 'tech' }} />
       <BlogPostContainer ref={refs.blog} />
+      <Jobs ref={refs.jobs}
+        visibilityProps={{ id: 'jobs' }} />
     </>
   )
 }

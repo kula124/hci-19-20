@@ -5,13 +5,15 @@ import PropTypes from 'prop-types'
 import s from './style.module.scss'
 
 // eslint-disable-next-line react/display-name
-const FlatButton = React.forwardRef(({ onClick, styleProp, children, ...rest }, ref) =>
-  <button onClick={onClick}
-    ref={ref}
-    styleName={styleProp || 'default'}
-    {...rest}>
-    {children}
-  </button>)
+const FlatButton = React.forwardRef(({ onClick, styleProp, children, ...rest }, ref) => {
+  return (
+    <button onClick={onClick}
+      ref={ref}
+      styleName={styleProp || 'default'}
+      {...rest}>
+      {children}
+    </button>)
+})
 
 FlatButton.propTypes = {
   children: PropTypes.any,
