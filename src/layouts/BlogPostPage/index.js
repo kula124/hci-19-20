@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Typewriter from 'typewriter-effect'
@@ -9,29 +9,12 @@ import Logo from 'components/Images/Logo'
 import './style.module.scss'
 
 const BlogPost = ({ pageContext }) => {
-  const { body, title, coverImage, summary } = pageContext
-  const [show, setShow] = useState()
-
-  const scrollController = () => prev => {
-    if (document.body.scrollTop > prev) {
-      return setShow(false)
-    }
-
-    if (document.body.scrollTop < prev) {
-      return setShow(true)
-    }
-
-    prev = document.body.scrollTop
-  }
-
-  if (typeof window !== `undefined` && typeof document !== `undefined`) {
-    window.onScroll = scrollController(document.body.scrollTop)
-  }
+  const { body, title, coverImage, summary, next, prev } = pageContext
 
   return (
     <div styleName='main-container'>
       <header className='animated fadeInDown'
-        styleName={`${show ? 'sticky' : 'hidden'}`}>
+        styleName='sticky'>
         <section styleName='logo'>
           <Logo />
           <p>&lt;</p>
