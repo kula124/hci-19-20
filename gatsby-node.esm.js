@@ -51,10 +51,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const res = listMapper(raw.data).posts.map(blogPostMapper)
 
-  res.forEach((e, index) => actions.createPage({
+  res.forEach((e, index, array) => actions.createPage({
     component: path.resolve(`./src/layouts/BlogPostPage/index.js`),
     context: {
-      ...e
+      ...e,
+      next: index < array.length ? array[index + 1] : null,
+      prev: index > 0 ? array[index - 1] : null
     },
     path: `posts/${e.slug}`,
     slug: `posts/${e.slug}`

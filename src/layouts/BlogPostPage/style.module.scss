@@ -19,9 +19,27 @@
             background-color: $num-bg-color;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
+
+            .n-p {
+                display: flex;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+
+                span {
+                    padding: 0 10px;
+                    color: $logo-color;
+                }
+
+                i {
+                    color: purple;
+                }
+            }
 
             .logo {
+                cursor: pointer;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
