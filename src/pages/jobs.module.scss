@@ -1,0 +1,91 @@
+@import '../styles/global.scss';
+
+.main {
+    width: 1250px;
+    margin: 0 auto;
+}
+
+.background_color-3 {
+    background-color: $gradient-color-3;
+}
+
+.background_color-4 {
+    background-color: $gradient-color-4;
+}
+
+.social {
+    @extend .code;
+}
+
+.code {
+    height: 50vh;
+    display: flex;
+    align-self: center;
+    main {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        article {
+            color: white;
+            width: 900px;
+            font-size: 22px;
+        }
+    }
+    
+}
+
+.main-container {
+    
+    .header {
+        height: calc(50vh - 60px);
+        width: 100vw;
+        background-color: $gradient-color-1;
+        
+        main {
+            @extend .main;
+
+            h1 {
+                margin-top: 0;
+                @extend .subtitle-paragraph;
+                color: white;
+                font-size: 40px;
+                padding-top: 40px;
+            }
+            
+            ul {
+                color: white;
+                h3 {
+                    font-size: 22px;
+                }
+                
+                figcaption {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .description {
+        height: 50vh;
+        width: 100vw;
+        background-color: $gradient-color-2;
+        display: flex;
+        align-items: center;
+
+        main {
+            @extend .main;
+            article {
+                padding: 25px 0;
+                color: white;
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+    }
+
+}
