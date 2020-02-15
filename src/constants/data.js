@@ -90,3 +90,41 @@ export const Cross = {
   We support development on all platforms and promise to provide best code possible on any device you choose!
   Be it cross-platform development, individual native applications or PWAs. You name it, we do it!`
 }
+
+export const Jobs = {
+  heading: 'Glad you asked!',
+  listData: [
+    {
+      animationListItemClass: 'animated bounceInRight',
+      header: 'Learn',
+      image: 'learn_jobs.png',
+      listItemClassName: 'numbers-item',
+      text: 'From the best'
+    },
+    {
+      animationListItemClass: 'animated bounceInRight',
+      header: 'Work',
+      image: 'code_jobs.png',
+      listItemClassName: 'numbers-item',
+      text: `Flexibly and remotely`
+    },
+    {
+      animationListItemClass: 'animated bounceInRight',
+      header: 'Grow',
+      image: 'grow_jobs.png',
+      listItemClassName: 'numbers-item',
+      text: `With your apps and salary will follow`
+    },
+    {
+      animationListItemClass: 'animated bounceInRight',
+      header: 'Socialize',
+      image: 'like_jobs.png',
+      listItemClassName: 'numbers-item',
+      text: `Through team-building and events`
+    }
+  ],
+  listStyleContainer: 'numbers-container',
+  paragraph: `We are nothing if not flexible. Join our relaxed workspace with talented but not snobby seniors
+    (yes, they exist, and we have them), learn new skills and sharpen your existing ones and grow with us!
+    Your salary will follow.`
+}

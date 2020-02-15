@@ -1,0 +1,45 @@
+@import '../../styles/global.scss';
+
+.main-container {
+    height: 90vh;
+    width: 100%;
+    margin-top: 60px;
+    padding-top: 60px;
+
+    .content {
+        margin: 0 auto;
+        width: 1200px;
+        height: 100%;
+        h1 {
+            @extend .main-title;
+            color: black;
+            margin: 0;
+        }
+        
+        p {
+            @extend .subtitle-paragraph;
+            color: black;
+        }
+        
+        .buttons {
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .quote {
+            font-style: italic;
+        }
+
+        ul {
+            font-size: 19px;
+            width: max-content;
+            margin: 0 auto;
+    
+            li {
+                width: fit-content;
+            }
+        }
+    }
+
+}

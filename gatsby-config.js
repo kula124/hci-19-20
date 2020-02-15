@@ -28,6 +28,7 @@ module.exports = {
       options: {
         // *.css files are included by default.
         //* This will support scss styes *//
+        webpackHotModuleReloading: true,
         filetypes: {
           ".scss": { syntax: `postcss-scss` },
         },

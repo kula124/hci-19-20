@@ -33,6 +33,20 @@
     }   
 }
 
+.jobs {
+    @extend .default;
+    background-color: #544aff;
+    font-size: 24px;
+    border: none;
+
+    &:hover:enabled {
+        border: none;
+        color: white;
+        background-color: purple;
+    }
+}
+
+
 .login {
     border: solid 1.5px white;
     cursor: pointer;
