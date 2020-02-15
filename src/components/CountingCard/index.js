@@ -6,11 +6,13 @@ import Count from 'react-countup'
 
 // eslint-disable-next-line no-unused-vars
 import s from './style.module.scss'
+import get from 'lodash.get'
 
 const and = (v1, v2) => !!v1 && !!v2
 
 const CountingCard = ({
   image,
+  imageProp,
   header,
   heading,
   text,
@@ -22,7 +24,7 @@ const CountingCard = ({
     styleName={visible ? `${listItemClassName}-visible` : listItemClassName}>
     {header && <h3>{header}</h3>}
     <div styleName='image-container'>
-      <Img fixed={image.node.childImageSharp.fixed} />
+      <Img fixed={get(image, imageProp || 'node.childImageSharp.fixed')} />
     </div>
     {and(visible, !!count) && <Count
       duration={4}
@@ -42,10 +44,10 @@ CountingCard.propTypes = {
   header: PropTypes.string,
   heading: PropTypes.string,
   image: PropTypes.object.isRequired,
+  imageProp: PropTypes.string,
   listItemClassName: PropTypes.string,
   text: PropTypes.string,
   visible: PropTypes.bool
-
 }
 
 export default CountingCard
