@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import FlatButton from 'components/FlatButton'
 import IsVisible from 'hooks/useIsVisible'
 import './style.module.scss'
+import { navigateTo } from 'gatsby'
 
 // eslint-disable-next-line react/display-name
 const Jobs = React.forwardRef(({ visibilityProps }, ref) => {
@@ -36,7 +37,8 @@ const Jobs = React.forwardRef(({ visibilityProps }, ref) => {
             <FlatButton styleProp='jobs'>
         I want to climb aboard!
             </FlatButton>
-            <FlatButton styleProp='jobs'>
+            <FlatButton onClick={() => navigateTo('/jobs')}
+              styleProp='jobs'>
           What are you offering?
             </FlatButton>
           </div>
