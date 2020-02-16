@@ -6,7 +6,7 @@ import './style.module.scss'
 import { navigateTo } from 'gatsby'
 
 // eslint-disable-next-line react/display-name
-const Jobs = React.forwardRef(({ visibilityProps }, ref) => {
+const Jobs = React.forwardRef(({ visibilityProps, buttonOnClick }, ref) => {
   return (
     <IsVisible {...visibilityProps}>
       <section ref={ref}
@@ -34,7 +34,8 @@ const Jobs = React.forwardRef(({ visibilityProps }, ref) => {
             </li>
           </ul>
           <div styleName='buttons'>
-            <FlatButton styleProp='jobs'>
+            <FlatButton onClick={buttonOnClick}
+              styleProp='jobs'>
         I want to climb aboard!
             </FlatButton>
             <FlatButton onClick={() => navigateTo('/jobs')}
@@ -49,6 +50,7 @@ const Jobs = React.forwardRef(({ visibilityProps }, ref) => {
 })
 
 Jobs.propTypes = {
+  buttonOnClick: PropTypes.func,
   visibilityProps: PropTypes.object
 }
 
