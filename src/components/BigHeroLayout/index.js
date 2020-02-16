@@ -16,8 +16,6 @@ const Layout = React.forwardRef(
 
     const imgPath = `node.${isMobile ? 'small' : 'list'}.fixed`
 
-    console.log(isMobile)
-
     return (
       <VisibilitySensor {...visibilityProps}>
         <section ref={ref}

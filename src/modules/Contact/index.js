@@ -16,8 +16,6 @@ const Contact = React.forwardRef(({ visibilityProps, refs, showSvg }, ref) => {
     })
   }
 
-  console.log(visibilityProps)
-
   return (
     <IsVisible {...visibilityProps}>
       <div ref={ref}
