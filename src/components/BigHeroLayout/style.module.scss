@@ -21,7 +21,8 @@
   h1 {
     @extend .main-title;
     margin: auto auto;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     display: block;
     background-image: linear-gradient(to left, #b000cf, #715eff, #403dff, #006878);
     background-clip: text;

@@ -6,12 +6,13 @@
             width: 90vw;
             display: grid;
             grid-template-columns: 1fr 1fr;
-
-            > div > div {
-                width: 287px;
-                margin-bottom: 12px;
-            }
         }
+
+        > div > div {
+            width: 287px;
+            margin-bottom: 12px;
+        }
+
         a {
             text-decoration: none;
             color: black;
@@ -19,6 +20,10 @@
             padding: 0 -5px;
 
             > div > div {
+                @media screen and (max-width: $desktop) {
+                    width: 90vw;
+                    width: 100px;
+                }
                 width: 170px;
                 margin-bottom: 12px;
             }
