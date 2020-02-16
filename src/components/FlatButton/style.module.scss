@@ -8,6 +8,9 @@
     @media screen and (max-width: $desktop) {
         min-width: 100px;
         min-height: 45px;
+        span {
+            font-size: 22px;
+        }
     }
     padding: 0;
     display: flex;
