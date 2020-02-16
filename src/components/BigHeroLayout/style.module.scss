@@ -11,10 +11,18 @@
   flex-flow: column;
   background-color: white;
 
+  @media only screen and (max-width: $desktop) {
+    width: 90vw;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
+
   h1 {
     @extend .main-title;
     margin: auto auto;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     display: block;
     background-image: linear-gradient(to left, #b000cf, #715eff, #403dff, #006878);
     background-clip: text;
@@ -27,6 +35,12 @@
 }
 
 .main-cross {
+  @media only screen and (max-width: $desktop) {
+    width: 90vw;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -36,6 +50,9 @@
   flex-flow: column;
 
   h1 {
+    @media only screen and (max-width: $desktop) {
+      margin-top: 30px;
+    }
     @extend .main-title;
     margin: 0 auto;
     margin-top: 80px;

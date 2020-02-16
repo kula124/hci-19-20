@@ -1,13 +1,10 @@
 @import '../../styles/global.scss';
 
 .main-container {
-  width: 100%;
-  height: calc(100vh + 100px);
   -webkit-background-size: cover;
   background: linear-gradient(-45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3, $gradient-color-4);
 	background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
-  
   @keyframes gradientBG {
     0% {
       background-position: 0% 50%;
@@ -20,6 +17,12 @@
     }
   }
 
+  @media screen and (max-width: $desktop) {
+    background-size: 200% 200%;
+  }
+
+  width: 100%;
+  height: calc(100vh + 100px);
   display: flex;
   align-items: center;
   flex-flow: column;
@@ -30,7 +33,9 @@
 
   h1 {
     @extend .main-title;
-    font-size: 40px;
+    @media screen and (max-width: $desktop) {
+    }
+    font-size: 30px;
     margin-top: auto;
 
     &:last-of-type {
@@ -39,6 +44,15 @@
   }
 
   figure {
+    & > div {
+      @media screen and (max-width: $desktop) {
+        width: 33px;
+        height: 33px;
+      }
+      width: 55px;
+      height: 55px;
+      margin-right: 10px;
+    }
     height: 100px;
     display: flex;
     flex-flow: row;
@@ -53,6 +67,9 @@
         display: inline;
       }
       span {
+        @media screen and (max-width: $desktop) {
+          font-size: 30px;
+        }
         margin: 0;
         letter-spacing: 2px;
         font-size: 50px;
@@ -61,6 +78,9 @@
       }
     }
     .code {
+      @media screen and (max-width: $desktop) {
+        font-size: 30px;
+      }
       font-size: 50px;
       color: purple;
     }

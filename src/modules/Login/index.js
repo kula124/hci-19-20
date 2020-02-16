@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 import { errors } from 'constants/errors'
 import { ExecuteOnRef } from 'helper'
 import get from 'lodash.get'
-import Logo from 'components/Images/Logo'
+import Logo from 'components/Logo'
 import Typewriter from 'typewriter-effect'
 import FlatButton from 'components/FlatButton'
 import { login, loginFail } from 'actions/auth'
@@ -28,9 +28,11 @@ const LoginPage = props => {
 
   return (
     <div styleName='root'>
-      <div styleName='main-container' >
+      <div styleName='main-container'>
         <div styleName='logo'>
-          <Logo />
+          <div styleName='logo-image'>
+            <Logo imgOnly/>
+          </div>
           <p>&lt;</p>
           <Typewriter
             options={{

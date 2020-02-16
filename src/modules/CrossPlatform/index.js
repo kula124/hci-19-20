@@ -11,26 +11,46 @@ const CrossPlatformModule = React.forwardRef((props, ref) => {
   const crossImages =
     keyBy(
       useStaticQuery(graphql`
-        query {
-          allFile(filter: {name: {regex: "/_cross/"}}) {
-            edges {
-              node {
-                childImageSharp {
-                  fixed(width: 100, height: 100) {
-                    src
-                    originalName
-                    srcSet
-                    width
-                    height
-                    tracedSVG
-                  }
+      query {
+        allFile(filter: {name: {regex: "/_cross/"}}) {
+          edges {
+            node {
+              list: childImageSharp {
+                fixed(width: 75, height: 75) {
+                  src
+                  originalName
+                  srcSet
+                  width
+                  height
+                  tracedSVG
                 }
-              }
+              },
+              small: childImageSharp {
+                fixed(width: 50, height: 50) {
+                  src
+                  originalName
+                  srcSet
+                  width
+                  height
+                  tracedSVG
+                }
+              },
+              large: childImageSharp {
+                fixed(width: 140, height: 140) {
+                  src
+                  originalName
+                  srcSet
+                  width
+                  height
+                  tracedSVG
+                }
+              },
             }
           }
         }
+      }
       `).allFile.edges,
-    e => get(e, 'node.childImageSharp.fixed.originalName')) // eslint-disable-line
+    e => get(e, `node.list.fixed.originalName`)) // eslint-disable-line
 
   return (
     <BigHeroLayout

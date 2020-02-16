@@ -8,6 +8,7 @@ import Img from 'gatsby-image'
 import List from 'components/DelayedList'
 import CountingCard from 'components/CountingCard'
 import PropTypes from 'prop-types'
+import { useMediaQuery } from 'react-responsive'
 
 // eslint-disable-next-line no-unused-vars
 import s from './jobs.module.scss'
@@ -79,6 +80,12 @@ const JobsPage = () => {
         `).allFile.edges,
     e => get(e, 'node.list.fixed.originalName'))
 
+  const mobile = useMediaQuery({
+    query: '(max-device-width: 1200px)'
+  })
+
+  const path = `node.${mobile ? 'list' : 'large'}.fixed`
+
   return (
     <div styleName='main-container'>
       <Header />
@@ -92,7 +99,7 @@ const JobsPage = () => {
               {
                 Jobs.listData.map(({ image, ...rest }, index) => <CountingCard
                   image={images[image]}
-                  imageProp='node.list.fixed'
+                  imageProp={`node.${mobile ? 'list' : 'large'}.fixed`}
                   key={index}
                   {...rest} />)
               }
@@ -112,7 +119,7 @@ const JobsPage = () => {
         </main>
       </section>
       <section styleName='code background_color-3'>
-        <Section images={[images['code_jobs.png'].node.large.fixed, images['learn_jobs.png'].node.large.fixed]}
+        <Section images={[get(images['code_jobs.png'], path), get(images['learn_jobs.png'], path)]}
         >
           As you work, you will learn. A senior mentor will be available to you to at all times to ask questions. We also hold internal presentations and seminars
           where we all talk about tech, ask questions and learn from each-other. Your code will be subject to supervision by the lead senior on your project so
@@ -120,7 +127,7 @@ const JobsPage = () => {
         </Section>
       </section>
       <section styleName='social background_color-4'>
-        <Section images={[images['grow_jobs.png'].node.large.fixed, images['like_jobs.png'].node.large.fixed]}
+        <Section images={[get(images['grow_jobs.png'], path), get(images['like_jobs.png'], path)]}
         >
           In time you wll learn and you will be less and less dependent on help. As you learn and grow, so does your reputation within the firm
           and among clients. All our employees have walked the same path as you. It is encouraged within the firm that you talk to your coworkers and

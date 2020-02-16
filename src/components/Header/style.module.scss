@@ -31,33 +31,8 @@
             color: purple;
         }
     }
-    .logo {
-        cursor: pointer;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: fit-content;
-        p, span {
-            margin: 0;
-            padding: 0;  
-        }
 
-        p {
-            color: $code-bracket-color;
-        }
-
-        span {
-            color: $logo-color;
-        }
-
-    }
-
-    div:first-of-type {
-        width: 40px;
-        height: 40px;
-    }
-
-    div {
+    & > div {
         margin-right: 15px;
     }
 }

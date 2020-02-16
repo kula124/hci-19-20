@@ -55,11 +55,6 @@ a > li {
   align-items: center;
   padding: 0 50px;
 
-  div:first-of-type { // image wrapper
-    height: 1.7em;
-    width: 1.7em;
-  }
-
   &:hover {
     cursor: pointer;
   }

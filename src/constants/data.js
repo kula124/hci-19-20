@@ -51,38 +51,35 @@ export const Cross = {
       header: 'Mobile',
       image: 'mobile_cross.png',
       listItemClassName: 'numbers-item',
-      text: 'Modern design and high performance on the go! We support all mobile platforms'
+      text: 'Modern design and high performance'
     },
     {
       animationListItemClass: 'animated bounceInRight',
       header: 'Web',
       image: 'web_cross.png',
       listItemClassName: 'numbers-item',
-      text: `Enjoy modern look, cutting edge web technology and high performance on any device or browser!`
+      text: `Just look at our site`
     },
     {
       animationListItemClass: 'animated bounceInRight',
       header: 'Servers',
       image: 'server_cross.png',
       listItemClassName: 'numbers-item',
-      text: `Rock solid backend with modern design patterns, enhanced by self-improving
-      AI for ever increasing performance. Built to scale!`
+      text: `Solid and reliable backend`
     },
     {
       animationListItemClass: 'animated bounceInRight',
       header: 'Analytics',
       image: 'analytics_cross.png',
       listItemClassName: 'numbers-item',
-      text: `Website without analytics is like a ship without a compass.
-      We provide you with any compass you want!`
+      text: `Compass of the web`
     },
     {
       animationListItemClass: 'animated bounceInRight',
       header: 'Desktop',
       image: 'desktop_cross.png',
       listItemClassName: 'numbers-item',
-      text: `Development and usage through same codebase via cross-platform
-      solutions such as Electron and Flutter or native`
+      text: `Desktop is NOT obsolete`
     }
   ],
   listStyleContainer: 'numbers-container',

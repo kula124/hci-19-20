@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 $counterFontSize: 38px;
 $captionFontSize: 20px;
 
@@ -8,8 +10,17 @@ $captionFontSize: 20px;
   flex-flow: column;
   align-items: center;
   max-width: 300px;
+  
+  @media only screen and (max-width: $desktop) {
+    width: 40vw;
+    padding-bottom: 20px;
+  }
 
   .image-container {
+    @media only screen and (max-width: $desktop) {
+      padding: 15px;
+    }
+
     width: fit-content;
     height: auto;
     border-radius: 50%;
@@ -18,12 +29,19 @@ $captionFontSize: 20px;
 
   span {
     font-size: $counterFontSize;
+    @media only screen and (max-width: $desktop) {
+      font-size: 25px;
+    }
     margin-bottom: 10px;
   }
 
   figcaption {
     text-align: center;
     font-size: $captionFontSize;
+    @media only screen and (max-width: $desktop) {
+      font-size: 18px;
+      height: 44px;
+    }
   }
 }
 
