@@ -1,0 +1,116 @@
+@import '../../styles/global.scss';
+
+.main-container {
+    background-color: $black;
+    height: 750px;
+
+    footer {
+        height: 250px;
+        background-color: $blacker;
+
+        h3 {
+            margin-top: 0;
+            padding: 15px 0 5px 0;
+        }
+
+        .icons {
+            text-align: center;
+            ul {
+                text-align: left;
+                width: fit-content;
+                margin: auto;
+            }
+
+            margin: 0 auto;
+            color: white;
+        }
+    }
+
+    svg {
+        width: 100%;
+        position: absolute;
+        top: 1;
+    }
+
+    .contact {
+        width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 100px;
+
+        .separator {
+            height: 4px;
+            width: 70px;
+            background-color: white;
+
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: $logo-color;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 500px;
+            
+            input, textarea {
+                width: 470px;
+                color: white;
+                height: 20px;
+                font-size: 16px;
+                padding: 10px 10px;
+                border: none;
+                background-color: $blacker;
+
+                &::placeholder {
+                    color: gray;
+                    font-size: 16px;
+                }
+            }
+
+            .buttons {
+                width: 100%;
+                display: flex;
+                flex-flow: row-reverse;
+                justify-content: space-between;
+
+                button {
+                    align-self: flex-end;
+                    width: 150px;
+                    padding: 5px 10px;
+                    color: $logo-color;
+                    border: none;
+                    background-color: $blacker;
+                    
+                    &:hover {
+                        border: none;
+                        background-color: gray;
+                        color: white;
+                    }
+                    
+                    span {
+                        margin: 0;
+                        padding: 0;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            textarea {
+                height: 250px;
+                resize: none;
+            }
+        } //form
+    }
+}
