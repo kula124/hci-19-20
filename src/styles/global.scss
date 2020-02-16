@@ -1,20 +1,31 @@
 // @import "./styes/typewritter.scss";
 @import './colors.scss';
+@import './media.scss';
 
 .main-title {
   color: aliceblue;
   font-size: 40px;
   text-align: center;
+
+  @media only screen and (max-width: $desktop) {
+    font-size: 30px;
+  }
 }
 
 .subtitle-paragraph {
     color: #616161;
     font-size: 23px;
     text-align: center;
+    @media only screen and (max-width: $desktop) {
+      font-size: 16px;
+    }
 }
 
 .navigation-font-size {
   font-size: 20px;
+  @media only screen and (max-width: $desktop) {
+    font-size: 16px;
+  }
 }
 
 /*.Typewriter {
