@@ -14,8 +14,7 @@
   @media only screen and (max-width: $desktop) {
     width: 90vw;
     height: auto;
-    padding: 0;
-    margin: 0 auto;
+    padding: 0 5vw;
   }
 
   h1 {
@@ -38,10 +37,10 @@
   @media only screen and (max-width: $desktop) {
     width: 90vw;
     height: auto;
-    padding: 0;
-    margin: 0 auto;
+    padding: 0 5vw;
   }
   margin: 0;
+  background-color: $gray-bg;
   padding: 0;
   height: 100vh;
   padding: 0 9vw;

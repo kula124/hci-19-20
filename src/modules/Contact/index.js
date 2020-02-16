@@ -28,8 +28,8 @@ const Contact = React.forwardRef(({ visibilityProps, refs, showSvg }, ref) => {
           width="100%"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0 L50 100 L100 0 Z"
-            fill="white"
-            stroke="white"></path>
+            fill="#f5f5f5"
+            stroke="#f5f5f5"></path>
         </svg>}
         <section styleName='contact'>
           <h1>Contact</h1>
