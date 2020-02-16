@@ -8,24 +8,22 @@
     opacity: 0;
 }
 
-.main-container {
-    
-}
-
-.heading {
-    margin-top: 130px;
-    width: fit-content;
-    margin: 50px auto;
-    text-align: center;
-    
-    & > div {
-        margin: 0 auto;
-        width: 33vw;
-        max-height: 400px;
+.main-container {    
+    .heading {
+        margin-top: 130px;
+        width: fit-content;
+        margin: 50px auto;
+        text-align: center;
+        
+        & > div {
+            margin: 0 auto;
+            width: 33vw;
+            max-height: 400px;
+        }
     }
-}
-
-.body {
-    width: 50vw;
-    margin: 0 auto;
+    
+    .body {
+        width: 50vw;
+        margin: 0 auto;
+    }
 }

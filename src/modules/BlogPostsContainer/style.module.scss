@@ -2,7 +2,16 @@
 
 .main-container {
     ul {
+        @media screen and (max-width: $desktop) {
+            width: 90vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
+            > div > div {
+                width: 287px;
+                margin-bottom: 12px;
+            }
+        }
         a {
             text-decoration: none;
             color: black;
@@ -10,8 +19,7 @@
             padding: 0 -5px;
 
             > div > div {
-                width: 287px;
-                height: 2807x;
+                width: 170px;
                 margin-bottom: 12px;
             }
 
@@ -19,11 +27,10 @@
                 margin: 0;
             }
         }
-
         margin-top: 50px;
-        display: grid;
         padding: 0;
         width: 50%;
+        display: grid;
         text-align: center;
         grid-template-columns: 1fr 1fr 1fr;
         align-items: flex-start;
