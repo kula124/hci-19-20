@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import LazyTypewriter from 'components/LazyTypewriter'
 import FlatButton from 'components/FlatButton'
-import Logo from 'components/Images/Logo'
+import Logo from 'components/Logo'
 
 import './style.module.scss'
 
@@ -12,7 +12,7 @@ const PageHeading = ({ Navigation, buttonOnClick, children }) => (
   <div styleName='main-container'>
     <h1>Welcome to </h1>
     <figure>
-      <Logo />
+      <Logo imgOnly/>
       <figcaption>
         <span styleName='code'>&lt;</span>
         <LazyTypewriter string={'Codejar'}

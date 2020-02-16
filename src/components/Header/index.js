@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Typewriter from 'typewriter-effect'
 import MaterialIcon from '@material/react-material-icon'
-import Logo from 'components/Images/Logo'
+import Logo from 'components/Logo'
 
 // eslint-disable-next-line no-unused-vars
-import s from './style.module.scss'
+import './style.module.scss'
 
 const Header = ({ prev, next }) => {
   const [state, setState] = useState({ show: true, prev: 0 })
@@ -46,20 +45,7 @@ const Header = ({ prev, next }) => {
         </Link>
         : <div />
       }
-      <Link to='/'>
-        <section styleName='logo'>
-          <Logo />
-          <p>&lt;</p>
-          <Typewriter
-            options={{
-              autoStart: true,
-              delay: 400,
-              strings: 'Codejar',
-              wrapperClassName: 'typewriter'
-            }} />
-          <p>/&gt;</p>
-        </section>
-      </Link>
+      <Logo narrowBracket/>
       {next
         ? <Link to={`/posts/${next.slug}`} >
           <section styleName='n-p'>

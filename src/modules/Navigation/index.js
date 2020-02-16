@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
 import { ScrollToRef } from 'helper'
-import Logo from 'components/Images/Logo'
-import Typewriter from 'typewriter-effect'
+import Logo from 'components/Logo'
 import PropTypes from 'prop-types'
 import { useStore } from 'store'
 import NavigationItem from './NavigationItem'
@@ -37,16 +36,7 @@ const Navigation = ({ refs, links }) => {
     <div className={sticky ? 'animated slideInDown' : 'animated fadeInUp'}
       styleName={sticky ? 'main-container sticky' : 'main-container' }>
       <div styleName='logo'>
-        <Logo />
-        <p>&lt;</p>
-        {visible && <Typewriter
-          options={{
-            autoStart: true,
-            delay: 400,
-            strings: 'Codejar',
-            wrapperClassName: 'typewriter'
-          }} />}
-        <p>/&gt;</p>
+        {visible && <Logo />}
         {auth.status
           ? <a>
             <li onClick={() => dispatch(logout())}>

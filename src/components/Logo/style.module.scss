@@ -1,0 +1,28 @@
+@import '../../styles/global.scss';
+
+.main-container {
+    .negative-margin {
+        margin-left: -10px !important;
+    }
+
+    .logo {
+        width: 157px;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        // width: fit-content;
+        p {
+            margin: 0;
+            padding: 0;  
+        }
+        
+        p {
+            color: $code-bracket-color;
+        }
+        
+        span {
+            color: $logo-color;
+        }    
+    }
+}
