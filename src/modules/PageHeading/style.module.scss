@@ -1,13 +1,10 @@
 @import '../../styles/global.scss';
 
 .main-container {
-  width: 100%;
-  height: calc(100vh + 100px);
   -webkit-background-size: cover;
   background: linear-gradient(-45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3, $gradient-color-4);
 	background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
-  
   @keyframes gradientBG {
     0% {
       background-position: 0% 50%;
@@ -20,6 +17,8 @@
     }
   }
 
+  width: 100%;
+  height: calc(100vh + 100px);
   display: flex;
   align-items: center;
   flex-flow: column;
@@ -39,6 +38,11 @@
   }
 
   figure {
+    & > div {
+      width: 55px;
+      height: 55px;
+      margin-right: 10px;
+    }
     height: 100px;
     display: flex;
     flex-flow: row;
@@ -63,6 +67,53 @@
     .code {
       font-size: 50px;
       color: purple;
+    }
+  }
+}
+
+// responsivenes
+
+@media only screen and (max-width: $desktop) {
+  .main-container {
+
+    width: 100%;
+    height: calc(100vh + 100px);
+    -webkit-background-size: cover;
+    background: linear-gradient(-45deg, $gradient-color-1, $gradient-color-2, $gradient-color-3, $gradient-color-4);
+    background-size: 200% 200%;
+
+    h1 {
+      font-size: 30px;
+
+      &:last-of-type {
+        margin-top: 15px;
+      }
+    }
+    figure {
+      height: 100px;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      flex-wrap: wrap;
+  
+      figcaption {
+        display: flex;
+  
+        .Typewriter {
+          display: inline;
+        }
+        span {
+          margin: 0;
+          letter-spacing: 2px;
+          font-size: 50px;
+          overflow: hidden;
+          color: $logo-color;
+        }
+      }
+      .code {
+        font-size: 50px;
+        color: purple;
+      }
     }
   }
 }

@@ -29,6 +29,9 @@ const Logo = ({ imgOnly, narrowBracket, ...rest }) => {
     <div styleName='main-container'>
       <Link to='/'>
         <section styleName='logo'>
+          <div style={{ height: '30px', marginRight: '10px', width: '30px' }}>
+            <Img fluid={get(data, 'codejarLogo.childImageSharp.fluid')} />
+          </div>
           <p>&lt;</p>
           <Typewriter
             options={{
