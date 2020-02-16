@@ -33,6 +33,7 @@
     "react-countup": "^4.2.3",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
+    "react-responsive": "^8.0.3",
     "react-visibility-sensor": "^5.1.1",
     "typewriter-effect": "^2.12.1"
   },
