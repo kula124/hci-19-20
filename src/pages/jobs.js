@@ -11,6 +11,8 @@ import PropTypes from 'prop-types'
 
 // eslint-disable-next-line no-unused-vars
 import s from './jobs.module.scss'
+import Contact from 'modules/Contact'
+import Header from 'components/Header'
 
 // eslint-disable-next-line react/prop-types
 const Section = ({ images, children }) => (
@@ -79,6 +81,7 @@ const JobsPage = () => {
 
   return (
     <div styleName='main-container'>
+      <Header />
       <header styleName='header'>
         <main>
           <h1>
@@ -126,7 +129,7 @@ const JobsPage = () => {
         </Section>
       </section>
       <footer>
-
+        <Contact />
       </footer>
     </div>
   )

@@ -42,7 +42,7 @@
 .main-container {
     
     .header {
-        height: calc(50vh - 60px);
+        height: 50vh;
         width: 100vw;
         background-color: $gradient-color-1;
         
@@ -54,7 +54,7 @@
                 @extend .subtitle-paragraph;
                 color: white;
                 font-size: 40px;
-                padding-top: 40px;
+                padding-top: 100px;
             }
             
             ul {
