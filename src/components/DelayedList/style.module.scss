@@ -1,12 +1,22 @@
+@import '../../styles/global.scss';
+
 .numbers-container {
   height: auto;
   width: 100%;
   min-height: 1px;
   display: flex;
+  flex-wrap: column;
   justify-content: space-around;
   padding: 0;
   margin: auto auto;
   // margin-bottom: 5%;
+
+  @media only screen and (max-width: $desktop) {
+    width: 100%;
+    flex-wrap: wrap;
+    height: fit-content;
+    padding-bottom: 30px;
+  }
 }
 
 .cross-container {
@@ -15,7 +25,7 @@
   margin: 0 auto;
   min-height: 1px;
   display: flex;
-  flex-flow: column;
+  flex-wrap: column;
   align-items: space-around;
   align-items: flex-start;
   padding: 0;
