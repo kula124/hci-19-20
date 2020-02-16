@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-// import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive'
 
 import { ScrollToRef } from 'helper'
 import Logo from 'components/Logo'
@@ -16,7 +16,10 @@ const isElementVisible = (element, nav) => {
 }
 
 const Navigation = ({ refs, links }) => {
-  const isMobile = true
+  const isMobile = useMediaQuery({
+    query: '(max-device-width: 1200px)'
+  })
+
   const [sticky, setSticky] = useState(false)
   const [visible, setVisible] = useState(false)
   const { store: { navigation, auth }, dispatch } = useStore()
