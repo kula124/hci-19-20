@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 // import { useMediaQuery } from 'react-responsive'
 
-import Hamburger from 'components/HamburgerNav'
 import { ScrollToRef } from 'helper'
 import Logo from 'components/Logo'
 import { useStore } from 'store'
@@ -17,7 +16,7 @@ const isElementVisible = (element, nav) => {
 }
 
 const Navigation = ({ refs, links }) => {
-  const isMobile = false
+  const isMobile = true
   const [sticky, setSticky] = useState(false)
   const [visible, setVisible] = useState(false)
   const { store: { navigation, auth }, dispatch } = useStore()
@@ -63,11 +62,8 @@ const Navigation = ({ refs, links }) => {
           </NavigationItem>
         </AuthProtector>
       </div>
-      {isMobile
-        ? <Hamburger >
-          {items}
-        </Hamburger>
-        : <nav>
+      {!isMobile &&
+        <nav>
           {items}
         </nav>}
     </div>

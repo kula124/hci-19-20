@@ -30,7 +30,9 @@ const LoginPage = props => {
     <div styleName='root'>
       <div styleName='main-container' >
         <div styleName='logo'>
-          <Logo />
+          <div styleName='logo-image'>
+            <Logo imgOnly/>
+          </div>
           <p>&lt;</p>
           <Typewriter
             options={{
