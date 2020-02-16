@@ -28,7 +28,7 @@ const LoginPage = props => {
 
   return (
     <div styleName='root'>
-      <div styleName='main-container' >
+      <div styleName='main-container'>
         <div styleName='logo'>
           <div styleName='logo-image'>
             <Logo imgOnly/>

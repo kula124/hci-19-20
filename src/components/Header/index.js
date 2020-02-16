@@ -8,7 +8,7 @@ import Logo from 'components/Logo'
 import './style.module.scss'
 
 const Header = ({ prev, next }) => {
-  const [state, setState] = useState({ show: true, prev: 0 })
+  const [state, setState] = useState({ prev: 0, show: true })
   const onScroll = () => {
     if (typeof document === 'undefined' || typeof window === 'undefined') {
       return
@@ -45,7 +45,7 @@ const Header = ({ prev, next }) => {
         </Link>
         : <div />
       }
-      <Logo narrowBracket/>
+      <Logo />
       {next
         ? <Link to={`/posts/${next.slug}`} >
           <section styleName='n-p'>
