@@ -34,8 +34,8 @@
   h1 {
     @extend .main-title;
     @media screen and (max-width: $desktop) {
+      font-size: 30px;
     }
-    font-size: 30px;
     margin-top: auto;
 
     &:last-of-type {
