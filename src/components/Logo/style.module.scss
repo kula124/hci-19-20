@@ -6,7 +6,11 @@
     }
 
     .logo {
-        width: 160px;
+        & > div:first-of-type {
+            width: 25px;
+            height: 25px;
+        }
+        width: 170px;
         cursor: pointer;
         display: flex;
         justify-content: flex-start;

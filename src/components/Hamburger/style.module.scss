@@ -1,0 +1,45 @@
+@import '../../styles/global.scss';
+
+.main-container {
+    .pad {
+        width: 100vw;
+        background-color: $num-bg-color;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        position: fixed;
+        top: -500px;
+        left: 0;
+        transition: top 1s ease-out;
+        height: fit-content;
+        nav {
+            height: fit-content;
+            text-align: left;
+        }
+    }
+
+    .show {
+        top: 60px;
+    }
+
+    .burger {
+        width: 27px;
+        margin-right: 20px;
+        height: 19px;
+        display: flex;
+        transition: transform 0.8s ease-in-out;
+        flex-direction: column;
+        justify-content: space-between;
+        & > div {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+    }
+
+    .on {
+        transform: rotate(90deg);
+    }
+}
