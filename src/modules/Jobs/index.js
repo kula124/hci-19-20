@@ -24,7 +24,7 @@ const Jobs = React.forwardRef(({ visibilityProps, buttonOnClick }, ref) => {
                  Senior Backend developer (Node/.NET)
             </li>
             <li>
-                 Junior Front-End developer (JS Frameworks-any)
+                 Junior Front-End developer
             </li>
             <li>
                  DevOps, Senior lead
