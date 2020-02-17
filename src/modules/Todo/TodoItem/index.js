@@ -10,7 +10,7 @@ const urgencyColorMap = {
   'urgent': '#ff0059'
 }
 
-const Item = ({ title, timestamp, description, id, urgency }) => (
+const Item = ({ title, Date, description, id, urgency }) => (
   <li style={{ backgroundColor: urgencyColorMap[urgency] }}
     styleName='main-container'>
     <header>
@@ -20,7 +20,7 @@ const Item = ({ title, timestamp, description, id, urgency }) => (
     <article>{description}</article>
     <footer>
       <span>{`Task id: ${id}`}</span>
-      <span>{`Date: ${timestamp}`}</span>
+      <span>{`Date: ${Date}`}</span>
     </footer>
   </li>
 )
@@ -28,7 +28,7 @@ const Item = ({ title, timestamp, description, id, urgency }) => (
 Item.propTypes = {
   description: PropTypes.string,
   id: PropTypes.number,
-  timestamp: PropTypes.string,
+  Date: PropTypes.string,
   title: PropTypes.string,
   urgency: PropTypes.number
 }
