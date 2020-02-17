@@ -1,10 +1,8 @@
 import get from 'lodash.get'
 
 const axios = require('axios').create({
-  baseURL: process.env.API_ENDPOINT
+  baseURL: 'https://my-json-server.typicode.com/n00ne1mportant/placeholder_api'
 })
-
-console.log(process.env.API_ENDPOINT)
 
 export const GenerateRandomString = (len) => len > 4
   ? GenerateRandomString(len - 4).concat(Math.random().toString(36).substring(1, 5))
@@ -44,7 +42,7 @@ export const responseMapper = map => object => {
 
 export const api = {
   get: async (url, params) => axios.get(url, {
-    baseURL: process.env.API_ENDPOINT,
+    baseURL: 'https://my-json-server.typicode.com/n00ne1mportant/placeholder_api',
     params
   })
 }
