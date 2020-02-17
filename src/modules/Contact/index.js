@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import IsVisible from 'hooks/useIsVisible'
-
+import { showToast } from 'actions/navigation'
 import './style.module.scss'
+import { useStore } from 'store'
 
 // eslint-disable-next-line react/display-name
 const Contact = React.forwardRef(({ visibilityProps, refs, showSvg }, ref) => {
@@ -15,6 +16,8 @@ const Contact = React.forwardRef(({ visibilityProps, refs, showSvg }, ref) => {
       refs[key].current.value = ''
     })
   }
+
+  const { dispatch } = useStore()
 
   return (
     <IsVisible {...visibilityProps}>
@@ -44,8 +47,9 @@ const Contact = React.forwardRef(({ visibilityProps, refs, showSvg }, ref) => {
             <textarea placeholder='Type your message here'
               ref={refs ? refs.message : null} />
             <div styleName='buttons'>
-              <button name='submit'
-                type='submit' >
+              <button onClick={() => dispatch(showToast(2500)).then(reset())}
+                type='button'
+              >
                 <span>Submit</span>
               </button>
               <button name='reset'

@@ -10,6 +10,7 @@ import AnimatedSpacer from 'components/AnimatedSpacer'
 import BlogPostContainer from 'modules/BlogPostsContainer'
 import Jobs from 'modules/Jobs'
 import Contact from 'modules/Contact'
+import ToastMessage from 'components/ToastMessage'
 
 const IndexPage = () => {
   const refs = {
@@ -36,6 +37,7 @@ const IndexPage = () => {
 
   return (
     <>
+      <ToastMessage />
       <PageHeading buttonOnClick={() => ScrollToRef(refs.about)}
         Navigation>
         <Navigation

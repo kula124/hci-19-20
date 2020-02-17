@@ -1,7 +1,7 @@
 import ls from 'local-storage'
 
 import React, { useContext, useReducer, createContext } from 'react'
-import { AUTH, NAVIGATION } from 'constants/actions'
+import { AUTH, NAVIGATION, TOAST } from 'constants/actions'
 
 const authData = ls.get('auth')
 
@@ -26,7 +26,8 @@ const mainReducer = (state, action) => {
           ...state.auth,
           inProgress: true,
           status: false
-        }
+        },
+        showToast: false
       })
     case AUTH.SUCCESS:
       return ({
@@ -62,6 +63,11 @@ const mainReducer = (state, action) => {
       return ({
         ...state,
         navigation: [...(state.navigation.filter(e => e !== action.data))]
+      })
+    case TOAST.TOGGLE:
+      return ({
+        ...state,
+        showToast: !state.showToast
       })
     default:
       return state

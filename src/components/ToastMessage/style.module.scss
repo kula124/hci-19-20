@@ -1,0 +1,19 @@
+.a-toast {
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    height: 70px;
+    bottom: -100px;
+    transition: bottom 0.5s ease-in-out;
+    background-color: yellowgreen;
+    color: white;
+    text-align: center;
+    p {
+        font-size: 22px;
+        font-weight: bolder;
+    }
+}
+
+.show {
+    bottom: 0;
+}
