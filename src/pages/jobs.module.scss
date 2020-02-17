@@ -68,7 +68,7 @@
 
 .main-container {
     .header {
-        height: 50vh;
+        height: calc(50vh + 60px);
         @media only screen and (max-width: $desktop) {
             height: 100vh;
             padding-bottom: 30px;

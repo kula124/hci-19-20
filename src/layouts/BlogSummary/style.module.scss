@@ -1,13 +1,8 @@
 @import '../../styles/global.scss';
 
 .main-container {
-    // margin: 0 10px;
-    
-    @media screen and (max-width: $desktop) {
-
     & > div {
         margin: auto;
-    }
         display: flex;
         flex-flow: column;
         justify-content: center;

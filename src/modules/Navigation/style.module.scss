@@ -39,7 +39,7 @@ a > li {
 
 .selected {
   // background: $hover-color;
-  color: #e6da00;
+  color: $selected;
 }
 
 .sticky {
@@ -86,7 +86,7 @@ nav {
   display: flex;
   justify-content: space-around;
   flex-flow: row;
-  
+
   @media only screen and (max-width: $desktop) {
     flex-flow: column;
     justify-content: space-around;
