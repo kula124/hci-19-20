@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useMediaQuery } from 'react-responsive'
 
+import Hamburger from 'components/Hamburger'
 import { ScrollToRef } from 'helper'
 import Logo from 'components/Logo'
 import { useStore } from 'store'
@@ -65,10 +66,14 @@ const Navigation = ({ refs, links }) => {
           </NavigationItem>
         </AuthProtector>
       </div>
-      {!isMobile &&
-        <nav>
+      {!isMobile
+        ? <nav>
           {items}
-        </nav>}
+        </nav>
+        : sticky &&
+        <Hamburger>
+          {items}
+        </Hamburger>}
     </div>
   )
 }

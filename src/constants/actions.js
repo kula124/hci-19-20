@@ -9,3 +9,7 @@ export const NAVIGATION = {
   ADD_VISIBLE: 'ADD_VISIBLE',
   REMOVE_VISIBLE: 'REMOVE_VISIBLE'
 }
+
+export const TOAST = {
+  TOGGLE: 'TOAST.TOGGLE'
+}

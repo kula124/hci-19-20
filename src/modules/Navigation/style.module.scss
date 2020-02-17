@@ -39,7 +39,7 @@ a > li {
 
 .selected {
   // background: $hover-color;
-  color: #e6da00;
+  color: $selected;
 }
 
 .sticky {
@@ -50,9 +50,16 @@ a > li {
 
 .logo {
   width: fit-content;
+  & > div {
+    margin-right: 0;
+  }
   display: flex;
   flex-flow: row;
   align-items: center;
+  @media only screen and (max-width: $desktop) {
+    padding-left: 0;
+    width: 200px;
+  }
   padding: 0 50px;
 
   &:hover {
@@ -77,8 +84,13 @@ nav {
   align-content: center;
   align-items: center;
   display: flex;
-  flex-flow: row;
   justify-content: space-around;
+  flex-flow: row;
+
+  @media only screen and (max-width: $desktop) {
+    flex-flow: column;
+    justify-content: space-around;
+  }
 
   li {
     padding: 14.5px 20px;
